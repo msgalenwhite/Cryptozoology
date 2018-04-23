@@ -12,12 +12,31 @@ feature 'user registers', %Q{
   # * If I don't specify the required information, I am presented with
   #   an error message
 
-  scenario 'provide valid registration information' do
+
+
+  scenario 'provide valid registration information with no bio or photo_url' do
     visit new_user_registration_path
 
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
+    fill_in 'Name', with: 'John'
+
+    click_button 'Sign up'
+
+    expect(page).to have_content('Welcome! You have signed up successfully.')
+    expect(page).to have_content('Sign Out')
+  end
+
+  scenario 'provide valid registration information including bio and photo_url' do
+    visit new_user_registration_path
+
+    fill_in 'Email', with: 'john@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    fill_in 'Name', with: 'John'
+    fill_in 'Photo', with: 'https://vignette.wikia.nocookie.net/monster/images/6/6e/DragonRed.jpg/revision/latest?cb=20160809235604'
+    fill_in 'Biography', with: 'I have been hunting dragons my whole life.'
 
     click_button 'Sign up'
 
