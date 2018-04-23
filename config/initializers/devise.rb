@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '131e45cf7e55fc725fb090ba812ae337f34af5242fc550445471c504c3503d1da286ec94b83d297ec76d99c01d5f6d81473eea3b2aa5f0933bf2026544d918a6'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -280,4 +280,7 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+
+  config.secret_key = '3e71f3672347a17d530d88ffb744f3066072e0ef2101d0526bf36de14b9edccd25960ae3414c4af80ddacab57d79e23beb6df91ebe8f476b0934c3f9ae902a17'
 end
