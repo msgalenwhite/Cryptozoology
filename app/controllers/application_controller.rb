@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
  def configure_permitted_parameters
    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo_url, :bio])
  end
+
+ before_action :set_categories
+
+ def set_categories
+   @categories = Category.all
+ end
+
 end
