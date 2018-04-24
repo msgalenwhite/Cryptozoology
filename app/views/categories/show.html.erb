@@ -1,15 +1,1 @@
 <h1> <%= @category.name %> </h1>
-
-<div>
-  <ul>
-    <% @cryptids.each do |cryptid| %>
-    <li> <%= link_to cryptid[:name], cryptid %></li>
-    <!-- To be updated to cryptid.name -->
-    <% end %>
-  </ul>
-</div>
-
-<div>
-  <h3>Recently Spotted</h3>
-<!-- Insert summary of @spotted once cryptid object is built. -->
-</div>
