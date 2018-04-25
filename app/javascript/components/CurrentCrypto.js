@@ -11,6 +11,7 @@ const CurrentCrypto = props => {
         alt='John Oliver is so handsome and cool'/>
       <h1>John Oliver</h1>
       <p>He loves Aliens and you know that fits in this catagory... Looking at you Matt.</p>
+      <p>credit to wikipedia for this image</p>
     </div>
   );
 };

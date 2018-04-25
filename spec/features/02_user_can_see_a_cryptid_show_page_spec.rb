@@ -7,11 +7,13 @@ feature 'user can see a cryptid show page', %Q{
 } do
   #Acceptance Criteria
   # * If I go to the cryptid show page I see info about the cryptid
-
-  let!(:cryptid) {Cryptid.create!(
-    name: "Dragon",
-    description: "Breathes fire"
-  )}
+  let!(:test_user) { FactoryBot.create(:user) }
+  let!(:cryptid) do
+    { Cryptid.create!(
+      name: "Dragon",
+      description: "Breathes fire",
+      user: test_user) }
+  end
 
   scenario 'user visits show page' do
 
