@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe Cryptid do
   it { should have_valid(:name).when("Dragon") }
   it { should_not have_valid(:name).when(nil, "") }
