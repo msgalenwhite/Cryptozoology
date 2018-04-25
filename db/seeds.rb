@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+<<<<<<< HEAD
 lake_monsters = Category.create!(name:"Lake Monsters")
 hairy_hominids = Category.create!(name:"Hairy Hominids")
 carnivorous_mammal = Category.create!(name:"Carnivorous Mammal")
@@ -18,3 +19,9 @@ africa = Region.create!(name: "Africa")
 europe = Region.create!(name: "Europe")
 asia = Region.create!(name: "Asia")
 oceania = Region.create!(name: "Oceania")
+=======
+lake_monsters = Category.create!(name: "Lake Monsters")
+hairy_hominids = Category.create!(name: "Hairy Hominids")
+carnivorous_mammal = Category.create!(name: "Carnivorous Mammal")
+reptile = Category.create!(name: "Reptile/Dinosaur")
+>>>>>>> a8ef8e36f1bbe263282209aa6e602a7c5e9c348d
