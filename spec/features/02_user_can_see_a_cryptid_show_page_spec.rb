@@ -9,10 +9,10 @@ feature 'user can see a cryptid show page', %Q{
   # * If I go to the cryptid show page I see info about the cryptid
   let!(:test_user) { FactoryBot.create(:user) }
   let!(:cryptid) do
-    { Cryptid.create!(
+     Cryptid.create!(
       name: "Dragon",
       description: "Breathes fire",
-      user: test_user) }
+      user: test_user)
   end
 
   scenario 'user visits show page' do
