@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_04_25_185447) do
-=======
 ActiveRecord::Schema.define(version: 2018_04_25_203006) do
->>>>>>> a8ef8e36f1bbe263282209aa6e602a7c5e9c348d
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +21,6 @@ ActiveRecord::Schema.define(version: 2018_04_25_203006) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "cryptids", force: :cascade do |t|
     t.string "name", null: false
     t.string "pic_url"
@@ -35,7 +29,6 @@ ActiveRecord::Schema.define(version: 2018_04_25_203006) do
     t.index ["user_id"], name: "index_cryptids_on_user_id"
   end
 
->>>>>>> a8ef8e36f1bbe263282209aa6e602a7c5e9c348d
   create_table "regions", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
