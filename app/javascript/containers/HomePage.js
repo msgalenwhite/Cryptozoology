@@ -16,6 +16,7 @@ const HomePage = props => {
           <HighestRatedCryptid/>
         </div>
       </div>
+      
       <div className="row">
         <div className="columns small-12 medium-8 tile-background">
           <CurrentCrypto/>

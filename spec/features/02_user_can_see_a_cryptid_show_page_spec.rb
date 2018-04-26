@@ -7,6 +7,7 @@ feature 'user can see a cryptid show page', %Q{
 } do
   #Acceptance Criteria
   # * If I go to the cryptid show page I see info about the cryptid
+  
   let!(:test_user) { FactoryBot.create(:user) }
   let!(:cryptid) do
      Cryptid.create!(
@@ -16,7 +17,6 @@ feature 'user can see a cryptid show page', %Q{
   end
 
   scenario 'user visits show page' do
-
     visit "/cryptids/#{cryptid.id}"
 
     expect(page).to have_content(cryptid.name)
