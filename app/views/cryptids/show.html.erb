@@ -1,1 +1,6 @@
 <h1><%= @cryptid.name %></h1>
+<h2> <%= @cryptid.category.name %> - <%= @cryptid.region.name %> </h2>
+
+<img src= <%= @cryptid.pic_url %> alt= <%= @cryptid.name %>>
+
+<p> <%= @cryptid.description %>

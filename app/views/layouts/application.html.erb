@@ -29,8 +29,8 @@
     </section>
 
     <section class="dropdown menu align-left float-menu">
-      <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Categories</a>
-        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Categories</a>
+        <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
           <% @categories.each do |category| %>
           <li> <%= link_to category.name, category %></li>
           <% end %>

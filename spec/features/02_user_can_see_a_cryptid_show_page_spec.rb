@@ -7,18 +7,27 @@ feature 'user can see a cryptid show page', %Q{
 } do
   #Acceptance Criteria
   # * If I go to the cryptid show page I see info about the cryptid
+  let!(:manape) {Category.create!(name: "Hairy Man Apes")}
   let!(:test_user) { FactoryBot.create(:user) }
-  let!(:cryptid) do
+  let!(:usa) {Region.create!(name: "USA")}
+  let!(:bigfoot) do
      Cryptid.create!(
-      name: "Dragon",
-      description: "Breathes fire",
-      user: test_user)
+      name: "Bigfoot",
+      description: "Hairy and scary",
+      user: test_user,
+      region: usa,
+      category: manape)
   end
 
   scenario 'user visits show page' do
 
-    visit "/cryptids/#{cryptid.id}"
+    visit "/cryptids/#{bigfoot.id}"
 
-    expect(page).to have_content(cryptid.name)
+    expect(page).to have_content(bigfoot.name)
+    expect(page).to have_content(bigfoot.region.name)
+    expect(page).to have_content(bigfoot.category.name)
+    expect(page).to have_content(bigfoot.pic_url)
+    expect(page).to have_content(bigfoot.description)
+
   end
 end
