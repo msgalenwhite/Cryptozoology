@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+### SOMETHING IS WRONG HERE
+
 RSpec.describe Api::V1::SightingsController, type: :controller do
 
   let!(:first_sighting) { FactoryBot.create(:sighting) }
