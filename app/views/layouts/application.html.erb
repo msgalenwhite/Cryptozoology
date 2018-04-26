@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Ubuntu" rel="stylesheet">
 <head>
   <title>Cryptozoology</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  
+
     <%= javascript_include_tag "vendor/modernizr" %>
-  
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">Cryptozoology</a></h1>
       </li>
     </ul>
+
+    <section class="dropdown menu align-left float-menu">
+      <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Regions</a>
+        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+          <% @regions.each do |region| %>
+          <li> <%= link_to region.name, region %></li>
+          <% end %>
+        </ul>
+    </section>
+
+    <section class="dropdown menu align-left float-menu">
+      <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Categories</a>
+        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+          <% @categories.each do |category| %>
+          <li> <%= link_to category.name, category %></li>
+          <% end %>
+        </ul>
+      </section>
 
     <section class="top-bar-section">
       <ul class="right">
@@ -35,7 +54,8 @@
       <%= value %>
     </div>
   <%- end -%>
-
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
