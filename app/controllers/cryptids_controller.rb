@@ -5,18 +5,24 @@ class CryptidsController < ApplicationController
 
   def new
     @cryptid = Cryptid.new
-    @regions = Region.all
-    @categories = Category.all
-    end
+  end
 
   def create
     @cryptid = Cryptid.new(cryptid_params)
-    @region = Region.where()
+    @cryptid.user = current_user
+
+    if @cryptid.save
+      flash[:notice] = "Cryptid succesfully added."
+      redirect_to cryptid_path(@cryptid)
+    else
+      flash[:alert] = @cryptid.errors.full_messages.join(" // ")
+      render 'new'
+    end
   end
 
 private
 
   def cryptid_params
-    params.require(:cryptid).permit(:name, :pic_url, :description)
+    params.require(:cryptid).permit(:name, :pic_url, :description, :region_id, :category_id)
   end
 end
