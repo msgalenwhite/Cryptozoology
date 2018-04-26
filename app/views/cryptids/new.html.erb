@@ -1,0 +1,32 @@
+<h1>New Cryptid Form</h1>
+
+<%= form_for(@cryptid) do |f| %>
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :pic_url, "Picture URL" %><br />
+    <%= f.text_field :pic_url%>
+  </div>
+
+  <div>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :region %><br />
+    <%= f.collection_select :region, Region.order(:name),:id,:name, include_blank: true %>
+  </div>
+
+  <div>
+    <%= f.label :category %><br />
+    <%= f.collection_select :category, Category.order(:name),:id,:name, include_blank: true %>
+  </div>
+
+  <div>
+  <%= f.submit %>
+</div>
+<% end %>
