@@ -1,1 +1,7 @@
 <h1> <%= @region.name %> </h1>
+
+<ul>
+  <% @cryptids.each do |cryptid| %>
+  <li> <%= link_to cryptid.name, cryptid %></li>
+  <% end %>
+</ul>
