@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Sighting from './Sighting'
 
 class MostRecentSightings extends Component {
   constructor(props){
@@ -11,8 +12,7 @@ class MostRecentSightings extends Component {
   render(){
 
     return(
-
-      <h3>Most Recent Sightings!!!!!</h3>
+      <Sighting />
     )
   }
 }
