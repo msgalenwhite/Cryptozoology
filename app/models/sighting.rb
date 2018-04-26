@@ -4,7 +4,8 @@ class Sighting < ApplicationRecord
   validates :pic_url, presence: true
   validates :rating, numericality: {
     only_integer: true,
-    in: 1..5
+    greater_than_or_equal_to: 1,
+    less_than_or_equal_to: 5
   }
   validates :identified, inclusion: {in: [true, false] }
 end
