@@ -12,8 +12,6 @@ feature 'user registers', %Q{
   # * If I don't specify the required information, I am presented with
   #   an error message
 
-
-
   scenario 'provide valid registration information with no bio or photo_url' do
     visit new_user_registration_path
 

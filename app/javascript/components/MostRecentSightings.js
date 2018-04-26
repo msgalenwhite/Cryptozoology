@@ -11,7 +11,6 @@ class MostRecentSightings extends Component {
   render(){
 
     return(
-
       <h3>Most Recent Sightings!!!!!</h3>
     )
   }
