@@ -28,7 +28,7 @@ feature 'user can add a new cryptid' do
 
     expect(page).to have_content "Cryptid succesfully added."
     expect(page).to have_content "Bigfoot"
-    page.find('#cryptid_show_pic')['src'].should have_content pic_url
+    page.find('#cryptid-show-pic')['src'].should have_content pic_url
     expect(page).to have_content "North America"
     expect(page).to have_content "Hairy Hominids"
     expect(page).to have_content "Like Robin Williams, but hairier."
