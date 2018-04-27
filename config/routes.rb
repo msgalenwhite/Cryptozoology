@@ -16,3 +16,4 @@ Rails.application.routes.draw do
   resources :regions, only: [:index, :show] do
     resources :cryptids, only: [:show]
   end
+end
