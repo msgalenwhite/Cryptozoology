@@ -27,7 +27,7 @@ feature 'user can see a cryptid show page', %Q{
     expect(page).to have_content(bigfoot.name)
     expect(page).to have_content(bigfoot.region.name)
     expect(page).to have_content(bigfoot.category.name)
-    page.find('#cryptid_show_pic')['src'].should have_content bigfoot.pic_url
+    page.find('#cryptid-show-pic')['src'].should have_content bigfoot.pic_url
     expect(page).to have_content(bigfoot.description)
 
   end
