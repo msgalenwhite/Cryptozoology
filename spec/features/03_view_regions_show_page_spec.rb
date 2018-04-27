@@ -22,11 +22,10 @@ feature 'user views a category show page' do
       category: manape)
   end
 
-
   scenario 'user sees cryptids in that category' do
-    visit "/categories/#{manape.id}"
+    visit "/regions/#{usa.id}"
 
-    expect(page).to have_content(manape.name)
+    expect(page).to have_content(usa.name)
     expect(page).to have_link(bigfoot.name)
     expect(page).to have_link(wendigo.name)
   end
