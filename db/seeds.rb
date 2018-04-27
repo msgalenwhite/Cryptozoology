@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create!(email: "admin@fakeemail.com", password: "password", name: "Admin")
+admin = User.create!(email: "admin@fakeemail.com", password: "password", name: "Admin", admin: true)
+member = User.create!(email: "member@fakeemail.com", password: "password", name: "Member")
 
 sea_monsters = Category.create!(name: "Sea Monsters")
 hairy_hominids = Category.create!(name: "Hairy Hominids")
