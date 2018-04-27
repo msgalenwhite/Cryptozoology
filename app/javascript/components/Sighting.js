@@ -5,13 +5,13 @@ import iconData from '../constants/iconData'
 const Sighting = props => {
 
   return(
-    <div className='sightingTile row'>
-      <div className='columns small-5 left_column'>
-        <img className='cryptid_pic' src={props.pic_url} alt={`Cool picture of a ${cryptid_name}`} />
-        <div className='user_name'>{props.user_name}</div>
+    <div className='sighting-tile row'>
+      <div className='columns small-5 left-column'>
+        <img className='cryptid-pic' src={props.pic_url} alt={`Cool picture of a ${cryptid_name}`} />
+        <div className='user-name'>{props.user_name}</div>
         <div className='date'>(Sighted: {props.created_at})</div>
       </div>
-      <div className='columns small-7 right_column'>
+      <div className='columns small-7 right-column'>
         <RatingBar
           headerText='Confidence in Sighting:'
           icon={iconData["confidence"][props.rating]}

@@ -1,17 +1,17 @@
-.sightingTile {
+.sighting-tile {
   background-color: white;
   min-height: 8em;
   width: 100%;
 
-  .left_column {
+  .left-column {
     padding: 20px;
     background-color: pink;
     text-align: center;
 
-    .cryptid_pic {
+    .cryptid-pic {
       width: 100%;
     }
-    .user_name {
+    .user-name {
       font-size: 1em;
       width: 100%;
     }
@@ -19,12 +19,12 @@
       font-size: .8em;
     }
   }
-  .right_column {
+  .right-column {
     padding: 10px;
     background: yellow;
   }
 
-  .confidenceIcon {
+  .confidence-icon {
     width: 11%;
     padding-left: .4em;
   }

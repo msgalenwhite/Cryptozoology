@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_04_27_143104) do
   end
 
   create_table "sightings", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "cryptid_id", null: false
     t.string "location", null: false
     t.text "description", null: false
