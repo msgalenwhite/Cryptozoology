@@ -37,37 +37,3 @@ body {
 .iconCreditTag {
   font-size: .9em;
 }
-// ### sighting Tile styling
-
-
-.sightingTile {
-  background-color: white;
-  min-height: 8em;
-  width: 100%;
-
-  .left_column {
-    padding: 20px;
-    background-color: pink;
-    text-align: center;
-
-    .cryptid_pic {
-      width: 100%;
-    }
-    .user_name {
-      font-size: 1em;
-      width: 100%;
-    }
-    .date {
-      font-size: .8em;
-    }
-  }
-  .right_column {
-    padding: 10px;
-    background: yellow;
-  }
-
-  .confidenceIcon {
-    width: 11%;
-    padding-left: .4em;
-  }
-}
