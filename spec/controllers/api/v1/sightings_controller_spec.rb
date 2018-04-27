@@ -10,7 +10,8 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
   describe "GET#index" do
     it "should return a list of sightings with the most recent sighting first" do
       get :index
-      returned_json = JSON.parse(response.body)
+      returned_json = JSON.parse(response.body)["sightings"]
+
 
       expect(response.status).to eq(200)
       expect(response.content_type).to eq("application/json")
@@ -33,6 +34,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[1]["rating"]).to eq(second_sighting.rating)
       expect(returned_json[1]["identified"]).to eq(second_sighting.identified)
 
+      binding.pry
       expect(returned_json[0]["created_at"] < returned_json[1]["created_at"]).to eq true
     end
   end

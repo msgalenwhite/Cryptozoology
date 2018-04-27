@@ -3,6 +3,7 @@ import Sighting '../../app/javascript/components/Sighting'
 
 describe('HomePage', () => {
   let wrapper;
+  let sightings;
 
   beforeEach(() => {
     wrapper = mount(

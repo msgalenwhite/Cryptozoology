@@ -25,4 +25,7 @@ describe('HomePage', () => {
   it ("renders list of highest rated cryptids", () => {
     expect(wrapper.find(HighestRatedCryptid)).toBePresent()
   })
+  it ("displays a link to give credit for our icons", () => {
+    expect(wrapper.find('a')).toHaveProp("href", "https://icons8.com")
+  })
 })

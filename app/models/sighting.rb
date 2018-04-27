@@ -10,5 +10,5 @@ class Sighting < ApplicationRecord
   validates :identified, inclusion: {in: [true, false] }
 
   belongs_to :user
-  belongs_to :cryptid
+  belongs_to :cryptid, dependent: :destroy
 end

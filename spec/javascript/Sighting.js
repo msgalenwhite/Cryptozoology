@@ -24,6 +24,5 @@ describe('HomePage', () => {
   })
   it ("displays an image", () => {
     expect(wrapper.find(img)).toHaveProp("src", url)
-
   })
 })
