@@ -37,6 +37,20 @@ ActiveRecord::Schema.define(version: 2018_04_27_143104) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sightings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cryptid_id", null: false
+    t.string "location", null: false
+    t.text "description", null: false
+    t.string "pic_url", null: false
+    t.integer "rating", null: false
+    t.boolean "identified", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cryptid_id"], name: "index_sightings_on_cryptid_id"
+    t.index ["user_id"], name: "index_sightings_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

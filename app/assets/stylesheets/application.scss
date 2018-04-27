@@ -16,8 +16,24 @@
 
  */
 
-// @import "colors"
+@import "colors";
 
 .half-height{
- min-height: 50%;
+ min-height: 50vh;
+}
+
+body {
+  background-color: $pumpkin;
+}
+
+.page {
+  padding: .5em;
+}
+
+.row {
+  max-width: 100%;
+}
+
+.icon-credit-tag {
+  font-size: .9em;
 }

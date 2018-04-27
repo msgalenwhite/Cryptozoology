@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
+  namespace :api do
+    namespace :v1 do
+      resources :sightings, only: [:index]
+    end
+  end
+
   resources :cryptids, except: [:delete]
 
   resources :categories, only: [:index, :show]do
@@ -10,5 +16,4 @@ Rails.application.routes.draw do
   resources :regions, only: [:index, :show] do
     resources :cryptids, only: [:show]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

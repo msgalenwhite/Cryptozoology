@@ -1,0 +1,31 @@
+.sighting-tile {
+  background-color: white;
+  min-height: 8em;
+  width: 100%;
+
+  .left-column {
+    padding: 20px;
+    background-color: pink;
+    text-align: center;
+
+    .cryptid-pic {
+      width: 100%;
+    }
+    .user-name {
+      font-size: 1em;
+      width: 100%;
+    }
+    .date {
+      font-size: .8em;
+    }
+  }
+  .right-column {
+    padding: 10px;
+    background: yellow;
+  }
+
+  .confidence-icon {
+    width: 11%;
+    padding-left: .4em;
+  }
+}

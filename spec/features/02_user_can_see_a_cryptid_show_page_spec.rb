@@ -5,8 +5,11 @@ feature 'user can see a cryptid show page', %Q{
   I want to see a single cryptid
   To find out more about it
 } do
+
   #Acceptance Criteria
   # * If I go to the cryptid show page I see info about the cryptid
+  let!(:test_user) { FactoryBot.create(:user) }
+  let!(:cryptid) { FactoryBot.create(:cryptid) }
   let!(:manape) {Category.create!(name: "Hairy Man Apes")}
   let!(:test_user) { FactoryBot.create(:user) }
   let!(:usa) {Region.create!(name: "USA")}
