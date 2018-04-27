@@ -34,7 +34,6 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[1]["rating"]).to eq(second_sighting.rating)
       expect(returned_json[1]["identified"]).to eq(second_sighting.identified)
 
-      binding.pry
       expect(returned_json[0]["created_at"] < returned_json[1]["created_at"]).to eq true
     end
   end
