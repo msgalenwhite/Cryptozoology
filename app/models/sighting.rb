@@ -8,4 +8,7 @@ class Sighting < ApplicationRecord
     less_than_or_equal_to: 5
   }
   validates :identified, inclusion: {in: [true, false] }
+
+  belongs_to :user
+  belongs_to :cryptid
 end
