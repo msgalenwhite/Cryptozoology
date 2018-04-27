@@ -23,6 +23,7 @@ class MostRecentSightings extends Component {
       })
       .then ( response => response.json() )
       .then ( response => {
+        debugger
         this.setState({
           sightings: response
         })
