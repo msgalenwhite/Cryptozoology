@@ -47,10 +47,6 @@ feature 'Admin can delete cryptids' do
     expect(page).to have_content(manape.name)
     expect(page).to have_link(wendigo.name)
     expect(page).to_not have_link(bigfoot.name)
-    expect(page).to_not have_link(bigfoot.name)
-
-    # visit "/cryptids/#{bigfoot.id}"
-    # (400 .. 599).should include(page.status_code)
 
   end
 

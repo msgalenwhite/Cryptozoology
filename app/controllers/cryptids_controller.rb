@@ -1,7 +1,6 @@
 class CryptidsController < ApplicationController
   def show
     @cryptid = Cryptid.find(params[:id])
-    @current_user = current_user
   end
 
   def new
