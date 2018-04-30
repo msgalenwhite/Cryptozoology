@@ -17,7 +17,8 @@
   </div>
 
   <div>
-    <%= select_tag("sighting[sighted_cryptid]", options_from_collection_for_select(@cryptids, "id", "name")) %>
+    <%= f.label :cryptid_id, "Choose a Cryptid" %><br />
+    <%= select_tag("sighting[cryptid_id]", options_from_collection_for_select(@cryptids, "id", "name")) %>
   </div>
 
   <div>
