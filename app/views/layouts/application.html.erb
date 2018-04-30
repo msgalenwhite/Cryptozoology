@@ -42,8 +42,8 @@
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <% unless current_user.profile_photo.file.nil? %>
-            <!-- <img src='<%= current_user.profile_photo.file %>' alt='Profile Photo' /> -->
+          <% unless current_user.profile_photo.nil? %>
+            <img src='<%= current_user.profile_photo.url %>' alt='Profile Photo' class='profile-photo'/>
           <% end %>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
