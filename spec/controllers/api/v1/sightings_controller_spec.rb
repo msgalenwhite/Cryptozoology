@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-### SOMETHING IS WRONG HERE
-
 RSpec.describe Api::V1::SightingsController, type: :controller do
 
   let!(:first_sighting) { FactoryBot.create(:sighting) }
@@ -11,7 +9,6 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
     it "should return a list of sightings with the most recent sighting first" do
       get :index
       returned_json = JSON.parse(response.body)["sightings"]
-
 
       expect(response.status).to eq(200)
       expect(response.content_type).to eq("application/json")

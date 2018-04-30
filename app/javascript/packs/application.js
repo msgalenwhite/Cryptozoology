@@ -9,14 +9,14 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import HomePage from '../containers/HomePage'
+import App from '../containers/App'
 
 document.addEventListener('DOMContentLoaded', () => {
   let reactElement = document.getElementById('app')
 
   if (reactElement) {
     ReactDOM.render(
-      <HomePage />,
+      <App />,
       reactElement
     )
   }
