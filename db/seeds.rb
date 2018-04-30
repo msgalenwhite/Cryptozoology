@@ -5,16 +5,17 @@
 #
 #   movies = Movie.find_or_create_by([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.find_or_create_by(name: 'Luke', movie: movies.first)
-admin = User.find_or_create_by!(
+admin = User.create!(
   email: "admin@fakeemail.com",
   password: "password",
   name: "Admin",
   admin: true
 )
-member = User.find_or_create_by!(
+member = User.create!(
   email: "member@fakeemail.com",
   password: "password",
-  name: "Member"
+  name: "Member",
+  admin: false
 )
 
 sea_monsters = Category.find_or_create_by!(name: "Sea Monsters")
@@ -107,94 +108,94 @@ sighting3 = Sighting.find_or_create_by!(
   user: member,
   cryptid: nessie ,
   location: "Loch Ness, Scotland",
-  description: "I was in me row boat, I dinnae know what was happening, ",
-  rating: ,
+  description: "I was in my rowboat and Nessie ducked her head in to say hello.  I gave her a hug but she dived underwater before I could take a selfie. ",
+  rating: 5,
 )
 
 sighting4 = Sighting.find_or_create_by!(
   user: member,
   cryptid: nessie ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Girl Scout Troop \#469 - South Park, CO",
+  description: 'A young Girl Scout was trying to sell me Thin Mint cookies.  She said she needed about $3.50.  It was about that time I realized this "Girl Scout" was actually 3 stories tall and a pleseosaur from the Paleolithic Era',
+  rating: 1,
 )
 
 sighting5 = Sighting.find_or_create_by!(
   user: member,
   cryptid: chupacabra ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Juarez, Mexico",
+  description: "I had 23 goats.  Now I have 4 goats.",
+  rating: 3,
 )
 
 sighting6 = Sighting.find_or_create_by!(
   user: member,
-  cryptid: jinn ,
-  location: ,
-  description: ,
-  rating: ,
+  cryptid: chupacabra ,
+  location: "El Paso, TX",
+  description: "I thought it was a coyote, but it looked too fast for that.  I keep my goats inside.",
+  rating: 2,
 )
 
 sighting7 = Sighting.find_or_create_by!(
   user: member,
   cryptid: jinn ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Dubai, Qatar",
+  description: "I met a man who told me he was a Jinn, but I think he was just a rich oil baron throwing his money around when he said he could make my wishes come true.",
+  rating: 2,
 )
 
 sighting8 = Sighting.find_or_create_by!(
   user: member,
   cryptid: jinn ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Agrabah, Jordan",
+  description: "I really wanted to get with this princess with a pet tiger and this big blue jinn helped me out.",
+  rating: 5,
 )
 
 sighting9 = Sighting.find_or_create_by!(
   user: member,
   cryptid: peuchen ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Outside Machu Pichu",
+  description: "My grandmother always told me to watch out for mosquitos as they are likely the Peuchen having changed shape, but she also has dementia.",
+  rating: 1,
 )
 
 sighting10 = Sighting.find_or_create_by!(
   user: member,
   cryptid: peuchen ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Santiago, Chile",
+  description: "The Peuchen follows me around singing showtunes, but whenever someone else shows up he changes in to an ordinary frog.  My whole family thinks I'm crazy.",
+  rating: 4,
 )
 
 sighting11 = Sighting.find_or_create_by!(
   user: member,
   cryptid: werehyena ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Mogadishu, Somalia",
+  description: "A Werehyena has captured our shipping vessel.  He is the Captain now." ,
+  rating: 4,
 )
 
 sighting12 = Sighting.find_or_create_by!(
   user: member,
   cryptid: werehyena ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "El Geneina, Sudan",
+  description: "I think I was attacked by a Werehyena, but he left me alone once he realized that I didn't have a girlfriend.  I even get friend-zoned by Werehyenas.",
+  rating: 3,
 )
 
 sighting13 = Sighting.find_or_create_by!(
   user: member,
   cryptid: megalodon ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Phillipine Sea",
+  description: "A very large shark swam by my catamaran.  Like, so big.  Maybe it was a Megaladon?  I'm not good at identifying fish,",
+  rating: 2,
 )
 
 sighting14 = Sighting.find_or_create_by!(
   user: member,
   cryptid: megalodon ,
-  location: ,
-  description: ,
-  rating: ,
+  location: "Solomon Sea",
+  description: "My cousin says he had a megaladon chew through his fishing lines, but he only has a 14-footer so I think he is full of it.",
+  rating: 1,
 )
