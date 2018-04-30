@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cryptids, except: [:index]
+  resources :sightings, only: [:new, :create]
 
   resources :categories, only: [:index, :show]do
     resources :cryptids, only: [:show]
@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :regions, only: [:index, :show] do
     resources :cryptids, only: [:show]
   end
+
+  resources :cryptids, except: [:index]
 end

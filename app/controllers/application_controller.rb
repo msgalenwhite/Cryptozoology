@@ -21,5 +21,4 @@ class ApplicationController < ActionController::Base
  def set_regions
    @regions = Region.all
  end
-
 end
