@@ -1,3 +1,12 @@
 .float-menu {
   float: left;
 }
+
+.top-bar {
+  overflow: hidden;
+  height: 2.7em;
+  .profile-photo {
+    height: 2.7em;
+    width: 2.7em;
+  }
+}
