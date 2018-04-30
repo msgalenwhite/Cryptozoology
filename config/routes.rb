@@ -17,5 +17,5 @@ Rails.application.routes.draw do
     resources :cryptids, only: [:show]
   end
 
-  resources :cryptids
+  resources :cryptids, except: [:index]
 end
