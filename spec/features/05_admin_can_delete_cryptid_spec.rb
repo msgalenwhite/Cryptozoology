@@ -3,14 +3,7 @@ require 'rails_helper'
 
 feature 'Admin can delete cryptids' do
   let!(:manape) {Category.create!(name: "Hairy Man Apes")}
-  let!(:admin) do
-    User.create!(
-      name: "Admin",
-      email: "fakefake@fake.com",
-      password: "password",
-      admin: true)
-  end
-
+  let!(:admin) { FactoryBot.create(:user, admin: true)}
   let!(:user1) { FactoryBot.create(:user) }
   let!(:user2) { FactoryBot.create(:user) }
   let!(:usa) {Region.create!(name: "USA")}
@@ -54,10 +47,6 @@ feature 'Admin can delete cryptids' do
     expect(page).to have_content(manape.name)
     expect(page).to have_link(wendigo.name)
     expect(page).to_not have_link(bigfoot.name)
-    expect(page).to_not have_link(bigfoot.name)
-
-    # visit "/cryptids/#{bigfoot.id}"
-    # (400 .. 599).should include(page.status_code)
 
   end
 
