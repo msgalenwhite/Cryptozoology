@@ -1,0 +1,23 @@
+@import "colors";
+
+.top-bar {
+  background-color: $dark-green;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: $yellow-ish;
+  font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+.top-bar a {
+  color: white;
+  weight: normal;
+  font-size: rem-calc(17);
+  margin-right: 10px;
+}
+
+.top-bar .name h1 a{
+  font-family: 'Ubuntu', sans-serif;
+  color: $yellow-ish
+}

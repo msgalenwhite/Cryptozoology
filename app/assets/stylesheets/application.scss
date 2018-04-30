@@ -16,8 +16,6 @@
 
  */
 
-// @import "colors"
-
 @import "colors";
 
 .half-height{
@@ -25,7 +23,8 @@
 }
 
 body {
-  background-color: $pumpkin;
+  background-color: $dark-teal;
+  font-family: 'Ubuntu', sans-serif;
 
 }
 
