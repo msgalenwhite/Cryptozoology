@@ -88,10 +88,113 @@ megalodon = Cryptid.find_or_create_by!(
   category: sea_monsters
 )
 sighting1 = Sighting.find_or_create_by!(
-  user: ,
-  cryptid: ,
+  user: member,
+  cryptid: bigfoot ,
+  location: "The Woods of the Pacific Northwest",
+  description: "I saw him walk by, but maybe he was just a guy in a suit.  He looked like he may be wearing a watch.",
+  rating: 2,
+)
+
+sighting2 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "The YMCA - Portland, OR",
+  description: "This dude was 100% a Sasquatch.  He looks like he shaved, but he could bench 800 pounds.",
+  rating: 4,
+)
+
+sighting3 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: nessie ,
+  location: "Loch Ness, Scotland",
+  description: "I was in me row boat, I dinnae know what was happening, ",
+  rating: ,
+)
+
+sighting4 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: nessie ,
   location: ,
   description: ,
   rating: ,
+)
 
+sighting5 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: chupacabra ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting6 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: jinn ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting7 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: jinn ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting8 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: jinn ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting9 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: peuchen ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting10 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: peuchen ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting11 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: werehyena ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting12 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: werehyena ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting13 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: megalodon ,
+  location: ,
+  description: ,
+  rating: ,
+)
+
+sighting14 = Sighting.find_or_create_by!(
+  user: member,
+  cryptid: megalodon ,
+  location: ,
+  description: ,
+  rating: ,
 )
