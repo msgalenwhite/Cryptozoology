@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_27_143104) do
+ActiveRecord::Schema.define(version: 2018_04_30_195612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 2018_04_27_143104) do
     t.bigint "cryptid_id", null: false
     t.string "location", null: false
     t.text "description", null: false
-    t.string "pic_url", null: false
+    t.string "pic_url"
     t.integer "rating", null: false
-    t.boolean "identified", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "votes", default: 0, null: false
     t.index ["cryptid_id"], name: "index_sightings_on_cryptid_id"
     t.index ["user_id"], name: "index_sightings_on_user_id"
   end

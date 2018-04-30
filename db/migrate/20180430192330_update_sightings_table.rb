@@ -1,9 +1,15 @@
 class UpdateSightingsTable < ActiveRecord::Migration[5.2]
-  def change
+  def up
     change_table :sightings do |t|
       t.remove :identified
-      t.integer :votes, null: false, 
+      t.integer :votes, null: false
     end
-    change_column_null :sightings, :pic_url, true
+  end
+
+  def down
+    change_table :sightings do |t|
+      t.boolean :identified, default: true
+      t.remove :votes
+    end
   end
 end
