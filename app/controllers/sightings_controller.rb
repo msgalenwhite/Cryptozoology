@@ -8,7 +8,7 @@ class SightingsController < ApplicationController
           flash[:notice] = "You have deleted this sighting"
           redirect_to "/cryptids/#{@cryptid.id}"
         else
-          flash[:notice] = "You can can only delete Cryptids that you have created"
+          flash[:notice] = "You can can only delete Cryptid Sightings that you have created"
           redirect_to cryptid_path(@cryptid)
         end
       else
