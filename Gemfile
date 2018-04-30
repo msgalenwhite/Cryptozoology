@@ -40,7 +40,7 @@ gem 'active_model_serializers'
 
 group :development, :test do
   gem 'database_cleaner'
-  gem 'dotenv'
+  gem 'dotenv-rails'
 end
 
 group :test do
