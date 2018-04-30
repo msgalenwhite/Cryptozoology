@@ -93,3 +93,5 @@ megalodon = Cryptid.create!(
   region: oceania,
   category: sea_monsters
 )
+
+sighting
