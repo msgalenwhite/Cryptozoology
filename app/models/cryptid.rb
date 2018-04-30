@@ -1,4 +1,7 @@
 class Cryptid < ApplicationRecord
+  searchable do
+    text :name, :description
+  end
   validates :name, presence: true
   validates :description, presence: true
 
