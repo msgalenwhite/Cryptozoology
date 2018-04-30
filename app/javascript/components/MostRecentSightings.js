@@ -11,7 +11,7 @@ class MostRecentSightings extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/vi/sightings")
+    fetch('/api/v1/sightings')
       .then ( response => {
         if ( response.ok ) {
           return response;
@@ -23,26 +23,23 @@ class MostRecentSightings extends Component {
       })
       .then ( response => response.json() )
       .then ( response => {
-        debugger
-        this.setState({
-          sightings: response
-        })
+        this.setState({ sightings: response["sightings"] })
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
   }
 
   generateTiles() {
     let tiles = this.state.sightings.map((sighting) => {
-
       return(
         <Sighting
-          user_name={sighting.user_name}
-          pic_url={sighting.cryptid.pic_url}
-          cryptid_name={sighting.cryptid.name}
-          location={sighting.location}
-          description={sighting.description}
-          rating={sighting.rating}
-          created_at={sighting.created_at}
+          key={sighting["id"]}
+          user_name={sighting["user_name"]}
+          pic_url={sighting["pic_url"]}
+          cryptid_name={sighting["cryptid_name"]}
+          location={sighting["location"]}
+          description={sighting["description"]}
+          rating={sighting["rating"]}
+          created_at={sighting["created_at"]}
         />
       )
     })
@@ -51,7 +48,10 @@ class MostRecentSightings extends Component {
   }
 
   render(){
-    let tiles = this.generateTiles()
+    let tiles;
+    if (this.state.sightings.length > 0){
+      tiles = this.generateTiles()
+    }
 
     return(
       <div>

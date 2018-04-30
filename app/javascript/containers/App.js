@@ -8,7 +8,6 @@ const App = props => {
   return(
     <Router history={browserHistory}>
       <Route path='/' component={HomePage} />
-      <Route path='/regions/:id' component={MostRecentSightings} />
     </Router>
   )
 }
