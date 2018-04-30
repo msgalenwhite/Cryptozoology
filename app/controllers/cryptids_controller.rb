@@ -1,6 +1,7 @@
 class CryptidsController < ApplicationController
   def show
     @cryptid = Cryptid.find(params[:id])
+    @current_user = current_user
   end
 
   def new
@@ -17,6 +18,24 @@ class CryptidsController < ApplicationController
     else
       flash[:alert] = @cryptid.errors.full_messages.join(" // ")
       render 'new'
+    end
+  end
+
+  def destroy
+    @cryptid = Cryptid.find(params[:id])
+    if !current_user.nil?
+      if current_user.admin? || current_user == @cryptid.user
+        @category = @cryptid.category
+        @cryptid.destroy
+        flash[:notice] = "You have killed the #{@cryptid.name}"
+        redirect_to "/categories/#{@category.id}"
+      else
+        flash[:notice] = "You can can only delete Cryptids that you have created"
+        redirect_to cryptid_path(@cryptid)
+      end
+    else
+      flash[:notice] = "You must be logged in to delete"
+      redirect_to cryptid_path(@cryptid)
     end
   end
 
