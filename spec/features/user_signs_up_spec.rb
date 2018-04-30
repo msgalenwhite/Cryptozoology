@@ -37,11 +37,13 @@ feature 'user registers', %Q{
     fill_in 'Name', with: 'John'
     fill_in 'Photo', with: 'https://vignette.wikia.nocookie.net/monster/images/6/6e/DragonRed.jpg/revision/latest?cb=20160809235604'
     fill_in 'Biography', with: 'I have been hunting dragons my whole life.'
+    attach_file :user_profile_photo, "#{Rails.root}/spec/support/images/photo.png"
 
     click_button 'Sign up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
+    expect(page).to have_css("img[src*='photo.png']")
   end
 
   scenario 'provide invalid registration information' do
