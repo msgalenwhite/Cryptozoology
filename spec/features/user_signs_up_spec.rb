@@ -35,7 +35,6 @@ feature 'user registers', %Q{
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     fill_in 'Name', with: 'John'
-    fill_in 'Photo', with: 'https://vignette.wikia.nocookie.net/monster/images/6/6e/DragonRed.jpg/revision/latest?cb=20160809235604'
     fill_in 'Biography', with: 'I have been hunting dragons my whole life.'
 
     click_button 'Sign up'
