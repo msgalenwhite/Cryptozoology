@@ -1,7 +1,21 @@
-<h1> <%= @category.name %> </h1>
+<h1 class="index_title"> <%= @category.name %> </h1>
 
-<ul>
-  <% @cryptids.each do |cryptid| %>
-  <li> <%= link_to cryptid.name, cryptid %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="small-11 medium-5 columns link-container">
+    <h3 class="cryptids-title">Cryptids</h3>
+  <ul class="cryptid-links">
+    <% @cryptids.each do |cryptid| %>
+    <div class="image-line-height">
+       <img class="dino-bullet" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALiSURBVFhH7dhZqA9RAMfxvzWRNdlJoZAXebAWWR7lxbW+ESmhCEUkSjwoyb5EooQHRYhsDxJePOBF1lCyZ5eL7+/OnDqdzv8/Z+Y/c6P+v/p0Z86dmXNm7pw559xSLbXUkl96Yx9e4AvOYxD+iQzHO/xxvMUIdEZdbAomxoZhALqiKQpJO7yE2zjjMyZhr1Xm8x13cBzLMRC5ZAHsinZhHu5bZap8OnZYZUl+Q69JL1SVAzAXvaqCOO2hfbvS07jrlLm+4iF+xfuP0Qmp0gRL8Az2xS9A2YCe6ABVYB+TZBwUdboHUNkhFaTJKrgXludohqPQk1UWw3dsOVtgooegsnr0U0FIBsM8fp9lUAOfQFkL33Hl/MBIKCdhyteoICTbYF/QpZdbnxfd9RVUuply3sN9f68hKKrcPrGxvEFi+sN3cmPQJycxM+A72fgEfWgNlT2Nt/XTPT7UdjRHYsr1Xpt6bwso2p8fbTZ0nFMYi+twz3MdhMZ2vY99EZRN8F3Mpd6nz81QmKj3t4w2S7Og43TDk+Ptc9DwpnO/QemB7tFmWDSM2Q2p5AjKTQBm4izaNOxFx+sJK6pDn6pM0UXchlSyEyHRsVujzepyGG4jkmyGhkbNDVvBF706baPN6qLe5GtEEo3RF3EZhWYjfA0IpdFFM5PRmIvcswK+itPQcuBmvD0GuUaTTrdCPRW3LNQH6LPyCOOhd3U3NKPOlCFwK6k03U9L4/xr6CmvxiikikaIn7AvesnZz4tmRXqqqXMb9oV01+vwyirz0fzwFrQ+8f3epic4DZmyHu4F1UjNnKdiEVbG5mACOsJEvVhD3A3Yc0Vt6+Z1s12QOVoD242zqRI9pWPYE9uPM9Bi6SOWwkQzlG5QgzR25xL1tHvwNTCEJgLB64usWQhf5aHMgqqwtIZWcL7KQ2hh1AeFZjZ8lYfS2rnwnICv8hBaAhT2DyMT/ak1LbfXIWkU3llq+c9TKv0FId1j96+YeloAAAAASUVORK5CYII="/>
+      <%= link_to cryptid.name, cryptid, :class => "one-cryptid-link" %>
+    </div>
+    <% end %>
+  </ul>
+  </div>
+
+  <div class="small-11 medium-5 columns highlight-container">
+    <h3 class="spotted-title">Recently Spotted</h3>
+      <div id="app">
+      </div>
+  </div>
+</div>

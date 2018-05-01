@@ -23,7 +23,9 @@
 }
 
 body {
-  background-color: $pumpkin;
+  background-color: $dark-teal;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 .page {
@@ -34,6 +36,10 @@ body {
   max-width: 100%;
 }
 
+
 .icon-credit-tag {
   font-size: .9em;
+
+.float-menu {
+  float: left;
 }
