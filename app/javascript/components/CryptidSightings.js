@@ -44,7 +44,7 @@ class CryptidSightings extends Component {
             key={sighting["id"]}
             user_name={sighting["user_name"]}
             pic_url={sighting["cryptid_pic"]}
-            cryptid_name={sighting["cryptid_name"]}
+            cryptid_name={""}
             location={sighting["location"]}
             description={sighting["description"]}
             rating={sighting["rating"]}
