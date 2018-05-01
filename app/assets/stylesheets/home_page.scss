@@ -1,0 +1,52 @@
+@import 'colors';
+
+.homepageCryptoPic {
+  max-width: 30%;
+  float: left;
+  padding-right: 2em;
+}
+
+.home-page {
+  padding: .5em;
+  .main-row {
+    max-width: 100%;
+    min-height: 30vh;
+  }
+}
+
+.tile-background {
+  background-color: white;
+  border: .8em solid $dark-teal;
+  padding: 2em;
+  p {
+    font-size: 1.1em;
+  }
+}
+
+.home-page-tile-title {
+  text-align: left;
+  color: $dark-green;
+  font-size: 1.6em;
+  .focus-text {
+    font-weight: bold;
+  }
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-around;
+  .new-submission-button {
+    color: $dark-green;
+    font-size: 1.2em;
+    background-color: $yellow-ish;
+    padding: .4em .8em;
+    border-radius: 5px;
+  }
+  .new-submission-button:hover {
+    opacity: .7;
+  }
+}
+
+.center {
+  text-align: center;
+}
