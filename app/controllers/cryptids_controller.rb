@@ -60,11 +60,11 @@ class CryptidsController < ApplicationController
           render :edit
         end
     else
-      flash[:notice] = "You can can only delete Cryptids that you have created"
+      flash[:notice] = "You can can only edit Cryptids that you have created"
       redirect_to cryptid_path(@cryptid)
     end
   else
-    flash[:notice] = "You must be logged in to delete"
+    flash[:notice] = "You must be logged in to edit"
     redirect_to cryptid_path(@cryptid)
   end
 end
