@@ -38,6 +38,13 @@
         </ul>
       </section>
 
+    <section class="search-field float-menu">
+      <%= form_tag("/cryptids", method: "get") do %>
+        Cryptids <%= text_field_tag :name, params[:name] %>
+        <%= submit_tag 'Search', name: nil %>
+      <% end %>
+    </section>
+
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
