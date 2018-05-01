@@ -2,21 +2,25 @@
 
 .index_title {
   font-family: 'Ubuntu', sans-serif;
+  color: $yellow-ish;
+  font-weight: bold;
   margin: auto;
   margin-top: 1%;
   text-align: center;
   border: 3px;
-  border-style: solid;
-  border-color: black;
-  background-color: white;
-  padding: 20px;
+  // border-style: solid;
+  // border-color: black;
+  // background-color: white;
+  padding: .3em;
   width: 55%;
-  margin-bottom: 20px
+  margin-bottom: .3em;
 }
 
-.spotted-title{
+.spotted-title, .cryptids-title {
   text-align: center;
-  color: white;
+  color: $dark-green;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 .image-line-height{
@@ -29,31 +33,23 @@
   padding-bottom: 0.7em;
 }
 
-.cryptids-title{
-  text-align: center;
-  color: white;
-}
-
 .one-cryptid-link:hover {
   color: $yellow-ish;
 }
 
 .cryptid-links a {
-  color: white;
+  color: $dark-green;
   font-size: 2em;
 }
-.link-container {
-  border-color: white;
-  border-style: solid;
-  border-width: medium;
-  margin-left: 3%;
-  margin-right: 2%
-}
 
+.link-container, .highlight-container  {
+  background-color: white;
+  border: medium solid white;
+  border-radius: 4px;
+}
+.link-container {
+  margin-left: 5%;
+}
 .highlight-container {
-  border-color: white;
-  border-style: solid;
-  border-width: medium;
-  margin-left: 2%;
-  margin-right: 3%
+  margin-right: 5%;
 }
