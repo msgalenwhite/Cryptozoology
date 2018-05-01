@@ -1,0 +1,33 @@
+@import 'colors';
+
+.new-form {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2em;
+
+  label {
+    color: $dark-green;
+    font-size: 1.2em;
+  }
+
+  .radio-buttons {
+    text-align: center;
+    font-size: 1.3em;
+
+    input {
+      padding-left: 1em;
+    }
+  }
+
+}
+.button-div {
+  text-align: center;
+}
+.submit-button {
+  color: $dark-green;
+  font-size: 1.2em;
+  background-color: $yellow-ish;
+  padding: .4em .8em;
+}
