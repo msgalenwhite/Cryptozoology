@@ -13,7 +13,7 @@ describe('HomePage', () => {
     )
   });
 
-  it ("renders highest rated cryptozoologist", () => {
+  it ("renders our most inspiring cryptozoologist", () => {
     expect(wrapper.find(Inspiration)).toBePresent()
   })
   it ("renders about us", () => {
@@ -26,6 +26,6 @@ describe('HomePage', () => {
     expect(wrapper.find(HighestRatedCryptid)).toBePresent()
   })
   it ("displays a link to give credit for our icons", () => {
-    expect(wrapper.find('a')).toHaveProp("href", "https://icons8.com")
+    expect(wrapper.find('.icon-credit-tag')).toHaveProp("href", "https://icons8.com")
   })
 })
