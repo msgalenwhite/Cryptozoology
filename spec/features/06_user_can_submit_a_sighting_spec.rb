@@ -21,10 +21,9 @@ feature 'user can submit a sighting' do
 
     fill_in "Location", with: "location"
     fill_in "Description", with: "description"
-    fill_in "Picture URL", with: "pic_url"
     select cryptid.name, from: "Choose a Cryptid"
     choose('5')
-    attach_file :user_profile_photo, "#{Rails.root}/spec/support/images/purple_flowers.jpg"
+    attach_file "Photo", "#{Rails.root}/spec/support/images/purple_flowers.jpg"
 
     click_button 'Create Sighting'
 
