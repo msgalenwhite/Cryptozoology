@@ -6,7 +6,11 @@ class Sighting < ApplicationRecord
     greater_than_or_equal_to: 1,
     less_than_or_equal_to: 5
   }
-  validates :identified, inclusion: {in: [true, false] }
+  validates :votes, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: -1,
+    less_than_or_equal_to: 1
+  }
 
   belongs_to :user
   belongs_to :cryptid, dependent: :destroy

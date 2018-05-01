@@ -1,5 +1,4 @@
 class SightingsController < ApplicationController
-
   def new
     @sighting = Sighting.new
     @cryptids = Cryptid.all
