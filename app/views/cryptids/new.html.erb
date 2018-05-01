@@ -1,32 +1,33 @@
-<h1>New Cryptid Form</h1>
+<h1 class='index-title'>New Cryptid Form</h1>
+<div class='new-form'>
+  <%= form_for(@cryptid) do |f| %>
+    <div>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
 
-<%= form_for(@cryptid) do |f| %>
-  <div>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+    <div>
+      <%= f.label :pic_url, "Picture URL" %><br />
+      <%= f.text_field :pic_url%>
+    </div>
 
-  <div>
-    <%= f.label :pic_url, "Picture URL" %><br />
-    <%= f.text_field :pic_url%>
-  </div>
+    <div>
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
 
-  <div>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+    <div>
+      <%= f.label :region_id, "Region" %><br />
+      <%= f.collection_select :region_id, Region.order(:name),:id,:name, include_blank: true %>
+    </div>
 
-  <div>
-    <%= f.label :region_id, "Region" %><br />
-    <%= f.collection_select :region_id, Region.order(:name),:id,:name, include_blank: true %>
-  </div>
+    <div>
+      <%= f.label :category_id, "Category" %><br />
+      <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+    </div>
 
-  <div>
-    <%= f.label :category_id, "Category" %><br />
-    <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
-  </div>
-
-  <div>
-  <%= f.submit %>
+    <div class='button-div'>
+      <%= f.submit :class => 'submit-button' %>
+    </div>
+  <% end %>
 </div>
-<% end %>
