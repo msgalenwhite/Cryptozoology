@@ -9,19 +9,19 @@ const HomePage = props => {
   return(
     <div className="home-page">
       <h1 className='index-title'>Become an Amateur Cryptozoologist!</h1>
-      <div>
-        <div className="tile-background">
+      <div className="row">
+        <div className="columns small-12 medium-8 tile-background">
           <AboutUs/>
         </div>
-        <div className="tile-background">
+        <div className="columns small-12 medium-4 tile-background">
           <HighestRatedCryptid/>
         </div>
       </div>
-      <div>
-        <div className="tile-background">
+      <div className="row">
+        <div className="columns small-12 medium-8 tile-background">
           <CurrentCrypto/>
         </div>
-        <div className="tile-background">
+        <div className="columns small-12 medium-4 tile-background">
           <MostRecentSightings/>
         </div>
       </div>

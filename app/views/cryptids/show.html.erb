@@ -1,15 +1,14 @@
 <h1 class='index-title'><%= @cryptid.name %></h1>
+
 <div class='cryptid-container'>
+  <div class='cryptid-show-title'>
+    <%= @cryptid.category.name %> - <%= @cryptid.region.name %>
+  </div>
   <img
     class="cryptid-show-pic"
     src='<%= @cryptid.pic_url %>'
-    alt='<%= @cryptid.name %>' />
-
-  <h2 class='row'>
-    <span class='columns small-12, medium-6 cryptid-show-title'><%= @cryptid.category.name %> - </span>
-    <span class='columns small-12, medium-6 cryptid-show-title'><%= @cryptid.region.name %></span>
-
-
+    alt='<%= @cryptid.name %>'
+  />
   <p> <%= @cryptid.description %>
   </div>
   <% if current_user %>
