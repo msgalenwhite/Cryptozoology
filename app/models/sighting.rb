@@ -14,4 +14,10 @@ class Sighting < ApplicationRecord
 
   belongs_to :user
   belongs_to :cryptid, dependent: :destroy
+
+  default_scope { order(created_at: :asc) }
+
+  def formatted_date
+    created_at.strftime("%m/%d/%Y")
+  end
 end

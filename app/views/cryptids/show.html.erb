@@ -4,16 +4,24 @@
   <div class='cryptid-show-title'>
     <%= @cryptid.category.name %> - <%= @cryptid.region.name %>
   </div>
-  <img
-    class="cryptid-show-pic"
-    src='<%= @cryptid.pic_url %>'
-    alt='<%= @cryptid.name %>'
-  />
-  <p> <%= @cryptid.description %>
+  <div class='row'>
+    <img
+      class="cryptid-show-pic"
+      src='<%= @cryptid.pic_url %>'
+      alt='<%= @cryptid.name %>'
+    />
+    <p> <%= @cryptid.description %> </p>
   </div>
+
+  <div class='cryptid-sightings row'>
+    <h3 class='cryptid-show-title'>Recent Sightings of the <%= @cryptid.name %>:</h3>
+    <div id='app'></div>
+  </div>
+
   <% if current_user %>
     <% if current_user == @cryptid.user || current_user.admin? %>
       <br>
+      <%= link_to 'Edit', edit_cryptid_path(@cryptid) %>
       <%= link_to 'Delete', cryptid_path(@cryptid), :method => :delete, data: { confirm: 'Are you sure you want to delete this Cryptid?' } %>
     <% end %>
   <% end %>

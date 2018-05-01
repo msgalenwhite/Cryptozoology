@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require activestorage
-
-
-
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
