@@ -11,7 +11,7 @@ class MostRecentSightings extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/sightings')
+    fetch("/api/v1/sightings")
       .then ( response => {
         if ( response.ok ) {
           return response;
@@ -23,7 +23,10 @@ class MostRecentSightings extends Component {
       })
       .then ( response => response.json() )
       .then ( response => {
-        this.setState({ sightings: response["sightings"] })
+        let newResponse = response["sightings"]
+        this.setState({
+          sightings: newResponse
+        })
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
   }
@@ -48,13 +51,11 @@ class MostRecentSightings extends Component {
   }
 
   render(){
-    let tiles;
-    if (this.state.sightings.length > 0){
-      tiles = this.generateTiles()
-    }
+    let tiles = this.generateTiles()
 
     return(
       <div>
+        <h3>SIGHTINGS</h3>
         {tiles}
       </div>
     )
