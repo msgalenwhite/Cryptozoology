@@ -6,7 +6,6 @@ const Sighting = props => {
 
   return(
     <div className='sighting-tile row'>
-      hello
       <div className='columns small-5 left-column'>
         <img className='cryptid-pic' src={props.pic_url} alt={`Cool picture of a ${props.cryptid_name}`} />
         <div className='user-name'>{props.user_name}</div>

@@ -19,7 +19,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[0]["cryptid_name"]).to eq(first_sighting.cryptid.name)
       expect(returned_json[0]["description"]).to eq(first_sighting.description)
       expect(returned_json[0]["location"]).to eq(first_sighting.location)
-      expect(returned_json[0]["pic_url"]).to eq(first_sighting.pic_url)
+      expect(returned_json[0]["cryptid_pic"]).to eq(first_sighting.cryptid_pic)
       expect(returned_json[0]["rating"]).to eq(first_sighting.rating)
       expect(returned_json[0]["identified"]).to eq(first_sighting.identified)
 
@@ -27,7 +27,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[1]["cryptid_name"]).to eq(second_sighting.npm cryptid.name)
       expect(returned_json[1]["description"]).to eq(second_sighting.description)
       expect(returned_json[1]["location"]).to eq(second_sighting.location)
-      expect(returned_json[1]["pic_url"]).to eq(second_sighting.pic_url)
+      expect(returned_json[1]["cryptid_pic"]).to eq(second_sighting.cryptid_pic)
       expect(returned_json[1]["rating"]).to eq(second_sighting.rating)
       expect(returned_json[1]["identified"]).to eq(second_sighting.identified)
 
