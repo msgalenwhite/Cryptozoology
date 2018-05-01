@@ -24,7 +24,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[0]["identified"]).to eq(first_sighting.identified)
 
       expect(returned_json[1]["user_name"]).to eq(second_sighting.user.name)
-      expect(returned_json[1]["cryptid_name"]).to eq(second_sighting.cryptid.name)
+      expect(returned_json[1]["cryptid_name"]).to eq(second_sighting.npm cryptid.name)
       expect(returned_json[1]["description"]).to eq(second_sighting.description)
       expect(returned_json[1]["location"]).to eq(second_sighting.location)
       expect(returned_json[1]["pic_url"]).to eq(second_sighting.pic_url)

@@ -33,7 +33,6 @@ class MostRecentSightings extends Component {
 
   generateTiles() {
     let tiles = this.state.sightings.map((sighting) => {
-
       return(
         <Sighting
           key={sighting["id"]}
@@ -56,6 +55,7 @@ class MostRecentSightings extends Component {
 
     return(
       <div>
+        <h3>SIGHTINGS</h3>
         {tiles}
       </div>
     )

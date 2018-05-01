@@ -17,22 +17,17 @@
  */
 
 @import "colors";
-
-.half-height{
- min-height: 50vh;
-}
+//
+// .half-height{
+//  min-height: 50vh;
+// }
 
 body {
-  background-color: $pumpkin;
+  background-color: $dark-teal;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.page {
-  padding: .5em;
-}
 
-.row {
-  max-width: 100%;
-}
 
 .icon-credit-tag {
   font-size: .9em;

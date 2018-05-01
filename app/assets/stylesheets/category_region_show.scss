@@ -1,0 +1,50 @@
+@import "colors";
+
+.index-title {
+  font-family: 'Ubuntu', sans-serif;
+  color: $yellow-ish;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+  border: 3px;
+  padding: .3em;
+  margin-bottom: .3em;
+}
+
+.spotted-title, .cryptids-title {
+  text-align: center;
+  color: $dark-green;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.image-line-height{
+  line-height: 2em;
+}
+
+.dino-bullet{
+  vertical-align: middle;
+  width: 1.3em;
+  padding-bottom: 0.7em;
+}
+
+.one-cryptid-link:hover {
+  color: $yellow-ish;
+}
+
+.cryptid-links a {
+  color: $dark-green;
+  font-size: 2em;
+}
+
+.link-container, .highlight-container  {
+  background-color: white;
+  border-radius: 4px;
+}
+.link-container {
+  margin-left: 5%;
+}
+.highlight-container {
+  margin-right: 5%;
+}
