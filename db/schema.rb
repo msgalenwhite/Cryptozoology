@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_01_180416) do
+ActiveRecord::Schema.define(version: 2018_05_01_193319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_180416) do
 
   create_table "cryptids", force: :cascade do |t|
     t.string "name", null: false
-    t.string "pic_url"
+    t.string "photo"
     t.text "description", null: false
     t.bigint "user_id", null: false
     t.integer "region_id", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_180416) do
     t.bigint "cryptid_id", null: false
     t.string "location", null: false
     t.text "description", null: false
-    t.string "pic_url"
+    t.string "photo"
     t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
