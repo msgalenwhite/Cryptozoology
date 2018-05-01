@@ -2,7 +2,7 @@
 .cryptid-show-title {
   text-align: center;
   color: $dark-green;
-  font-size: 2em;
+  font-size: .8em;
   font-style: italic;
 }
 
@@ -15,4 +15,6 @@
 
 .cryptid-show-pic {
   float: left;
+  margin-right: .8em;
+  margin-bottom: .8em;
 }
