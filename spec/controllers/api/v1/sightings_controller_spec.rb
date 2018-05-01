@@ -28,8 +28,6 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[1]["location"]).to eq(second_sighting.location)
       expect(returned_json[1]["cryptid_pic"]).to eq(second_sighting.cryptid.pic_url)
       expect(returned_json[1]["rating"]).to eq(second_sighting.rating)
-
-      expect(returned_json[0]["created_at"] < returned_json[1]["created_at"]).to eq true
     end
   end
 end

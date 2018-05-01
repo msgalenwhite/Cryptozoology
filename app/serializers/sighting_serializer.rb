@@ -1,6 +1,9 @@
 class SightingSerializer < ActiveModel::Serializer
-  attributes :id, :location, :description, :cryptid_pic, :rating, :created_at, :user_name, :cryptid_name
-
+  attributes :id, :location, :description, :cryptid_pic, :rating, :formatted_date, :user_name, :cryptid_name, :cryptid_id
+  
+  def cryptid_id
+    object.cryptid.id
+  end
   def user_name
     object.user.name
   end
@@ -9,5 +12,8 @@ class SightingSerializer < ActiveModel::Serializer
   end
   def cryptid_pic
     object.cryptid.pic_url
+  end
+  def formatted_date
+    object.formatted_date
   end
 end
