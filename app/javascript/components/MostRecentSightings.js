@@ -11,21 +11,21 @@ class MostRecentSightings extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/vi/sightings")
+    fetch('/api/v1/sightings')
       .then ( response => {
         if ( response.ok ) {
           return response;
         } else {
           let errorMessage = `${response.status} (${response.statusText})`;
-          let error = new Error(errorMessage);
+            error = new Error(errorMessage);
           throw(error);
         }
       })
       .then ( response => response.json() )
       .then ( response => {
-        debugger
+        let newResponse = response["sightings"]
         this.setState({
-          sightings: response
+          sightings: newResponse
         })
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
@@ -36,13 +36,14 @@ class MostRecentSightings extends Component {
 
       return(
         <Sighting
-          user_name={sighting.user_name}
-          pic_url={sighting.cryptid.pic_url}
-          cryptid_name={sighting.cryptid.name}
-          location={sighting.location}
-          description={sighting.description}
-          rating={sighting.rating}
-          created_at={sighting.created_at}
+          key={sighting["id"]}
+          user_name={sighting["user_name"]}
+          pic_url={sighting["cryptid_pic"]}
+          cryptid_name={sighting["cryptid_name"]}
+          location={sighting["location"]}
+          description={sighting["description"]}
+          rating={sighting["rating"]}
+          created_at={sighting["created_at"]}
         />
       )
     })
