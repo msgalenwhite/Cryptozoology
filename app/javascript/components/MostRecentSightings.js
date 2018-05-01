@@ -42,7 +42,7 @@ class MostRecentSightings extends Component {
           location={sighting["location"]}
           description={sighting["description"]}
           rating={sighting["rating"]}
-          created_at={sighting["created_at"]}
+          created_at={sighting["formatted_date"]}
         />
       )
     })

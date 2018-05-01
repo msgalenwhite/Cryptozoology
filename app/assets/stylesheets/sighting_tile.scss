@@ -1,7 +1,6 @@
 @import 'colors';
 
 .sighting-tile {
-  // background-color: #E9F3FA; good faded color
   min-height: 8em;
   width: 100%;
 
@@ -32,4 +31,9 @@
 .chosen-icon {
   width: 45px;
   opacity: 1;
+}
+.sighting-cryptid-name {
+  text-align: center;
+  color: $dark-green;
+  font-size: 1.3em;
 }
