@@ -1,12 +1,37 @@
+@import "colors";
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: $yellow-ish;
+  font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+.top-bar a {
+  color: white;
+  weight: normal;
+  font-size: rem-calc(17);
+  margin-right: 10px;
+}
+
+.top-bar .name h1 a{
+  font-family: 'Ubuntu', sans-serif;
+  color: $yellow-ish
+}
+
+.header a{
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.5em;
+}
+
 .float-menu {
   float: left;
 }
 
 .top-bar {
-  overflow: hidden;
-  height: 2.7em;
+  height: 2.8em;
+  background-color: $dark-green;
   .profile-photo {
-    height: 2.7em;
-    width: 2.7em;
+    height: 2.8em;
+    width: 2.8em;
   }
 }
