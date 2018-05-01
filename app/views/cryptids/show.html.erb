@@ -1,0 +1,13 @@
+<h1><%= @cryptid.name %></h1>
+<h2> <%= @cryptid.category.name %> - <%= @cryptid.region.name %> </h2>
+
+<img id="cryptid-show-pic" src= <%= @cryptid.pic_url %> alt= <%= @cryptid.name %>>
+
+<p> <%= @cryptid.description %>
+
+<% if current_user %>
+  <% if current_user == @cryptid.user || current_user.admin? %>
+    <br>
+    <%= link_to 'Delete', cryptid_path(@cryptid), :method => :delete, data: { confirm: 'Are you sure you want to delete this Cryptid?' } %>
+  <% end %>
+<% end %>

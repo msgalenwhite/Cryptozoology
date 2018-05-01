@@ -1,3 +1,4 @@
+
 .top-bar {
   background-color: #1A6571;
 }
@@ -7,6 +8,15 @@
   font-size: 1.5em;
 }
 
-// .dark-teal a{
-//   background-color: #1A6571;
-// }
+.float-menu {
+  float: left;
+}
+
+.top-bar {
+  overflow: hidden;
+  height: 2.7em;
+  .profile-photo {
+    height: 2.7em;
+    width: 2.7em;
+  }
+}

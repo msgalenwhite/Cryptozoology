@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_23_171700) do
+ActiveRecord::Schema.define(version: 2018_04_30_144158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cryptids", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "pic_url"
+    t.text "description", null: false
+    t.bigint "user_id", null: false
+    t.integer "region_id", null: false
+    t.integer "category_id", null: false
+    t.index ["user_id"], name: "index_cryptids_on_user_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sightings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cryptid_id", null: false
+    t.string "location", null: false
+    t.text "description", null: false
+    t.string "pic_url", null: false
+    t.integer "rating", null: false
+    t.boolean "identified", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cryptid_id"], name: "index_sightings_on_cryptid_id"
+    t.index ["user_id"], name: "index_sightings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,10 +63,11 @@ ActiveRecord::Schema.define(version: 2018_04_23_171700) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "name", null: false
-    t.string "photo_url"
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_photo"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
