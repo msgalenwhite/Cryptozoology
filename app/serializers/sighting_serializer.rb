@@ -11,7 +11,7 @@ class SightingSerializer < ActiveModel::Serializer
     object.cryptid.name
   end
   def cryptid_pic
-    object.photo
+    object.photo.url
   end
   def formatted_date
     object.formatted_date
