@@ -6,15 +6,36 @@
 
 .home-page {
   padding: .5em;
-}
-
-.row {
-  max-width: 100%;
-  min-height: 30vh;
+  .main-row {
+    max-width: 100%;
+    min-height: 30vh;
+  }
 }
 
 .tile-background {
   background-color: white;
   border: .8em solid $dark-teal;
   min-height: 30vh;
+  padding: 2em;
+}
+
+.home-page-tile-title {
+  text-align: left;
+  color: $dark-green;
+  font-size: 1.6em;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-around;
+  .new-submission-button {
+    color: $dark-green;
+    font-size: 1.2em;
+    background-color: $yellow-ish;
+    padding: .4em .8em;
+    border-radius: 5px;
+  }
+  .new-submission-button:hover {
+    opacity: .7;
+  }
 }
