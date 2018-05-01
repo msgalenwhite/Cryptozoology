@@ -1,31 +1,32 @@
-<h1>Wild Cryptid Spotted!</h1>
+<h1 class='index-title'>Wild Cryptid Spotted!</h1>
+<div class='new-form'>
+  <%= form_for @sighting do |f| %>
+    <div>
+      <%= f.label :location %><br />
+      <%= f.text_field :location %>
+    </div>
 
-<%= form_for @sighting do |f| %>
-  <div>
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
+    <div>
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
 
-  <div>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+    <div>
+      <%= f.label :pic_url, "Picture URL" %><br />
+      <%= f.text_field :pic_url%>
+    </div>
 
-  <div>
-    <%= f.label :pic_url, "Picture URL" %><br />
-    <%= f.text_field :pic_url%>
-  </div>
+    <div>
+      <%= f.label :cryptid_id, "Choose a Cryptid" %><br />
+      <%= select_tag("sighting[cryptid_id]", options_from_collection_for_select(@cryptids, "id", "name")) %>
+    </div>
 
-  <div>
-    <%= f.label :cryptid_id, "Choose a Cryptid" %><br />
-    <%= select_tag("sighting[cryptid_id]", options_from_collection_for_select(@cryptids, "id", "name")) %>
-  </div>
+    <div class='radio-buttons'>
+      <%= f.collection_radio_buttons(:rating, @rating_options, :first, :last) %>
+    </div>
 
-  <div>
-    <%= f.collection_radio_buttons(:rating, @rating_options, :first, :last) %>
-  </div>
-
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class='button-div'>
+      <%= f.submit :class => 'submit-button' %>
+    </div>
+  <% end %>
+</div>

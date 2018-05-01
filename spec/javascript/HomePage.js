@@ -1,6 +1,6 @@
 import HomePage from '../../app/javascript/containers/HomePage'
 import AboutUs from '../../app/javascript/components/AboutUs'
-import CurrentCrypto from '../../app/javascript/components/CurrentCrypto'
+import Inspiration from '../../app/javascript/components/Inspiration'
 import MostRecentSightings from '../../app/javascript/components/MostRecentSightings'
 import HighestRatedCryptid from '../../app/javascript/components/HighestRatedCryptid'
 
@@ -13,8 +13,8 @@ describe('HomePage', () => {
     )
   });
 
-  it ("renders highest rated cryptozoologist", () => {
-    expect(wrapper.find(CurrentCrypto)).toBePresent()
+  it ("renders our most inspiring cryptozoologist", () => {
+    expect(wrapper.find(Inspiration)).toBePresent()
   })
   it ("renders about us", () => {
     expect(wrapper.find(AboutUs)).toBePresent()
@@ -26,6 +26,6 @@ describe('HomePage', () => {
     expect(wrapper.find(HighestRatedCryptid)).toBePresent()
   })
   it ("displays a link to give credit for our icons", () => {
-    expect(wrapper.find('a')).toHaveProp("href", "https://icons8.com")
+    expect(wrapper.find('.icon-credit-tag')).toHaveProp("href", "https://icons8.com")
   })
 })

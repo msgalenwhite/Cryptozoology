@@ -1,0 +1,21 @@
+@import 'colors';
+.cryptid-show-title {
+  text-align: center;
+  color: $dark-green;
+  font-size: 1.6em;
+  font-style: italic;
+}
+
+.cryptid-container {
+  background-color: white;
+  border-radius: 4px;
+  margin: 0 5%;
+  padding: .8em;
+  display: inline-block;
+}
+
+.cryptid-show-pic {
+  float: left;
+  margin-right: .8em;
+  margin-bottom: .8em;
+}
