@@ -7,24 +7,25 @@ import AboutUs from '../components/AboutUs'
 const HomePage = props => {
 
   return(
-    <div className="page">
-      <div className="row">
-        <div className="columns small-12 medium-8 tile-background">
+    <div className="home-page">
+      <h1 className='index-title'>Become an Amateur Cryptozoologist!</h1>
+      <div>
+        <div className="tile-background">
           <AboutUs/>
         </div>
-        <div className="columns small-12 medium-4 tile-background">
+        <div className="tile-background">
           <HighestRatedCryptid/>
         </div>
       </div>
-      <div className="row">
-        <div className="columns small-12 medium-8 tile-background">
+      <div>
+        <div className="tile-background">
           <CurrentCrypto/>
         </div>
-        <div className="columns small-12 medium-4 tile-background">
+        <div className="tile-background">
           <MostRecentSightings/>
         </div>
       </div>
-      <a href="https://icons8.com" className='icon-credit-tag'>Icon pack by Icons8</a> 
+      <a href="https://icons8.com" className='icon-credit-tag'>Icon pack by Icons8</a>
     </div>
   )
 }

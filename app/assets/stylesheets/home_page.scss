@@ -1,0 +1,21 @@
+@import 'colors';
+
+.homepageCryptoPic {
+  max-width: 30%;
+}
+
+.home-page {
+  padding: .5em;
+}
+
+.row {
+  max-width: 100%;
+  min-height: 30vh;
+}
+
+.tile-background {
+  background-color: white;
+  border: medium solid $dark-teal;
+  min-height: 30vh;
+  border-radius: 3px;
+}

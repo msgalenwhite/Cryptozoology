@@ -1,9 +1,4 @@
-
 @import "colors";
-
-.top-bar {
-  background-color: $dark-green;
-}
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: $yellow-ish;
@@ -22,6 +17,7 @@
   font-family: 'Ubuntu', sans-serif;
   color: $yellow-ish
 }
+
 .header a{
   font-family: 'Do Hyeon', sans-serif;
   font-size: 1.5em;
@@ -33,6 +29,7 @@
 
 .top-bar {
   height: 2.8em;
+  background-color: $dark-green;
   .profile-photo {
     height: 2.8em;
     width: 2.8em;
