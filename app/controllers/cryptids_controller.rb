@@ -72,6 +72,6 @@ end
 private
 
   def cryptid_params
-    params.require(:cryptid).permit(:name, :pic_url, :description, :region_id, :category_id)
+    params.require(:cryptid).permit(:name, :photo, :description, :region_id, :category_id)
   end
 end

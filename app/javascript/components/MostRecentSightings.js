@@ -37,7 +37,7 @@ class MostRecentSightings extends Component {
         <Sighting
           key={sighting["id"]}
           user_name={sighting["user_name"]}
-          pic_url={sighting["cryptid_pic"]}
+          pic_url={sighting["cryptid_pic"].url}
           cryptid_name={sighting["cryptid_name"]}
           location={sighting["location"]}
           description={sighting["description"]}

@@ -23,6 +23,7 @@ feature 'user can add a new cryptid' do
     fill_in 'Description', with: "Like Robin Williams, but hairier."
     find(:select, "Region").first(:option, 'North America').select_option
     find(:select, "Category").first(:option, 'Hairy Hominids').select_option
+    attach_file :user_profile_photo, "#{Rails.root}/spec/support/images/purple_flowers.jpg"
 
     click_button "Create Cryptid"
 
@@ -32,6 +33,8 @@ feature 'user can add a new cryptid' do
     expect(page).to have_content "North America"
     expect(page).to have_content "Hairy Hominids"
     expect(page).to have_content "Like Robin Williams, but hairier."
+    expect(page).to have_css("img[src*='purple_flowers.jpg']")
+
   end
   scenario "user does not provide proper information for a cryptid" do
     visit new_user_session_path

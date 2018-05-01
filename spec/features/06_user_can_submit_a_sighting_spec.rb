@@ -12,7 +12,7 @@ feature 'user can submit a sighting' do
     expect(page).to have_content("can't be blank")
     expect(page).to have_content('Wild Cryptid Spotted!')
   end
-  
+
   scenario "user fully fills form" do
     user = FactoryBot.create(:user)
     cryptid = FactoryBot.create(:cryptid)
@@ -24,6 +24,7 @@ feature 'user can submit a sighting' do
     fill_in "Picture URL", with: "pic_url"
     select cryptid.name, from: "Choose a Cryptid"
     choose('5')
+    attach_file :user_profile_photo, "#{Rails.root}/spec/support/images/purple_flowers.jpg"
 
     click_button 'Create Sighting'
 
