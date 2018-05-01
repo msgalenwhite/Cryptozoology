@@ -1,0 +1,13 @@
+<h1> Users </h1>
+
+<ul>
+<% @users.each do |user| %>
+  <li>
+    <img src= <%= user.profile_photo %> alt = <%= user.name %>/>
+    <p><%= user.name %></p>
+    <p>Joined on: <%= user.formatted_date %></p>
+    <p><%= user.email%></p>
+    <%= link_to 'Delete', user_registration_path(@user), :method => :delete, data: { confirm: 'Are you sure you want to delete this User?' } %>
+  </li>
+<% end %>
+</ul>

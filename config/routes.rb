@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :cryptids, except: [:index]
+  resources :users, only: [:index]
 end
