@@ -38,6 +38,37 @@ class CryptidsController < ApplicationController
     end
   end
 
+  def edit
+    @cryptid = Cryptid.find(params[:id])
+  end
+
+  def update
+  @cryptid = Cryptid.find(params[:id])
+
+  if !current_user.nil?
+    if current_user.admin? || current_user == @cryptid.user
+      @cryptid.name = cryptid_params[:name]
+      @cryptid.pic_url = cryptid_params[:pic_url]
+      @cryptid.description = cryptid_params[:description]
+      @cryptid.region_id = cryptid_params[:region_id]
+      @cryptid.category_id = cryptid_params[:category_id]
+        if @cryptid.save
+          flash[:message] = "Cryptid updated."
+          redirect_to @cryptid
+        else
+          flash.now[:message] = @cryptid.errors.full_messages
+          render :edit
+        end
+    else
+      flash[:notice] = "You can can only edit Cryptids that you have created"
+      redirect_to cryptid_path(@cryptid)
+    end
+  else
+    flash[:notice] = "You must be logged in to edit"
+    redirect_to cryptid_path(@cryptid)
+  end
+end
+
 private
 
   def cryptid_params
