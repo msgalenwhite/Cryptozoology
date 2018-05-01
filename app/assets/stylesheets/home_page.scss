@@ -2,6 +2,8 @@
 
 .homepageCryptoPic {
   max-width: 30%;
+  float: left;
+  padding-right: 2em;
 }
 
 .home-page {
@@ -17,12 +19,18 @@
   border: .8em solid $dark-teal;
   min-height: 30vh;
   padding: 2em;
+  p {
+    font-size: 1.1em;
+  }
 }
 
 .home-page-tile-title {
   text-align: left;
   color: $dark-green;
   font-size: 1.6em;
+  .focus-text {
+    font-weight: bold;
+  }
 }
 
 .flex-box {
@@ -38,4 +46,8 @@
   .new-submission-button:hover {
     opacity: .7;
   }
+}
+
+.center {
+  text-align: center;
 }

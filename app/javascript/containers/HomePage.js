@@ -1,5 +1,5 @@
 import React from 'react'
-import CurrentCrypto from '../components/CurrentCrypto'
+import Inspiration from '../components/Inspiration'
 import HighestRatedCryptid from '../components/HighestRatedCryptid'
 import MostRecentSightings from '../components/MostRecentSightings'
 import AboutUs from '../components/AboutUs'
@@ -10,18 +10,18 @@ const HomePage = props => {
     <div className="home-page">
       <h1 className='index-title'>Become an Amateur Cryptozoologist!</h1>
       <div className="main-row row">
-        <div className="columns small-12 medium-8 tile-background">
+        <div className="columns small-12 medium-7 tile-background">
           <AboutUs/>
         </div>
-        <div className="columns small-12 medium-4 tile-background">
+        <div className="columns small-12 medium-5 tile-background">
           <HighestRatedCryptid/>
         </div>
       </div>
       <div className="main-row row">
-        <div className="columns small-12 medium-8 tile-background">
-          <CurrentCrypto/>
+        <div className="columns small-12 medium-7 tile-background">
+          <Inspiration/>
         </div>
-        <div className="columns small-12 medium-4 tile-background">
+        <div className="columns small-12 medium-5 tile-background">
           <MostRecentSightings/>
         </div>
       </div>
