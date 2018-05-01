@@ -55,7 +55,9 @@ class MostRecentSightings extends Component {
 
     return(
       <div>
-        <h3>SIGHTINGS</h3>
+        <h3 className='home-page-tile-title'>
+          Recent Sightings:
+        </h3>
         {tiles}
       </div>
     )

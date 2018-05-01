@@ -93,5 +93,3 @@ megalodon = Cryptid.find_or_create_by!(
   region: oceania,
   category: sea_monsters
 )
-
-sighting
