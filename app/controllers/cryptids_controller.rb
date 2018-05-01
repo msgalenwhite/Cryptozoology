@@ -59,7 +59,7 @@ class CryptidsController < ApplicationController
   if !current_user.nil?
     if current_user.admin? || current_user == @cryptid.user
       @cryptid.name = cryptid_params[:name]
-      @cryptid.pic_url = cryptid_params[:pic_url]
+      @cryptid.photo = cryptid_params[:photo]
       @cryptid.description = cryptid_params[:description]
       @cryptid.region_id = cryptid_params[:region_id]
       @cryptid.category_id = cryptid_params[:category_id]
@@ -83,6 +83,6 @@ end
 private
 
   def cryptid_params
-    params.require(:cryptid).permit(:name, :pic_url, :description, :region_id, :category_id)
+    params.require(:cryptid).permit(:name, :photo, :description, :region_id, :category_id)
   end
 end

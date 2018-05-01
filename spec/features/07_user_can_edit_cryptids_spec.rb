@@ -49,7 +49,6 @@ feature 'user can edit cryptids' do
     expect(page).to have_content(manape.name)
     expect(page).to have_content("Bigfeet")
     expect(page).to have_content("Like Robin Williams, but hairier.")
-
   end
 
   scenario 'cryptid owner edits cryptid' do
@@ -89,15 +88,12 @@ feature 'user can edit cryptids' do
     visit "/cryptids/#{bigfoot.id}"
 
     expect(page).to_not have_link('Edit')
-
-    end
+  end
 
   scenario 'not logged in user cant delete cryptid' do
 
     visit "/cryptids/#{bigfoot.id}"
 
     expect(page).to_not have_link('Edit')
-
   end
-
 end

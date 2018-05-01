@@ -12,6 +12,8 @@ class Sighting < ApplicationRecord
     less_than_or_equal_to: 1
   }
 
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
   belongs_to :cryptid, dependent: :destroy
 
