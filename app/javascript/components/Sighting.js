@@ -28,7 +28,7 @@ const Sighting = props => {
       <div className='columns small-1 sideways-thumbs'>
         <div className='icons'>
           <i className='fa fa-thumbs-up'></i>
-          {props.user_vote}
+          {props.vote_total}
           <i className='fa fa-thumbs-down'></i>
         </div>
       </div>

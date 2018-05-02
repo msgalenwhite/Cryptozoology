@@ -5,8 +5,7 @@ class MostRecentSightings extends Component {
   constructor(props){
     super(props);
     this.state = {
-      sightings: [],
-      currentUserId: null
+      sightings: []
     }
     this.generateTiles = this.generateTiles.bind(this)
     this.sendOutVotes = this.sendOutVotes.bind(this)
@@ -31,21 +30,18 @@ class MostRecentSightings extends Component {
       .then ( response => response.json() )
       .then ( response => {
         let newResponse = response["sightings"]
-        let userId = response["sightings"][0]["current_user_id"]
 
         this.setState({
-          sightings: newResponse,
-          currentUserId: userId
+          sightings: newResponse
         })
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
   }
 
-  sendOutVotes(sightingId, voteValue, currentUserId) {
+  sendOutVotes(sightingId, voteValue) {
     const formData = {
       sightingId: sightingId,
-      userVote: voteValue,
-      userId: this.state.currentUserId
+      userVote: voteValue
     }
 
     fetch("/api/v1/user_votes", {
@@ -83,7 +79,6 @@ class MostRecentSightings extends Component {
           rating={sighting["rating"]}
           created_at={sighting["formatted_date"]}
           vote_total={sighting["vote_total"]}
-          user_vote={sighting["user_vote"]}
         />
       )
     })
@@ -93,13 +88,11 @@ class MostRecentSightings extends Component {
 
   render(){
     let tiles = this.generateTiles()
-    let votes = () => {
-      this.sendOutVotes(2,1,this.state.currentUserId)
-    }
+
     return(
       <div>
         <h3 className='home-page-tile-title'>
-          <span onClick={votes}>Recent Sightings:</span>
+          <span>Recent Sightings:</span>
         </h3>
         {tiles}
       </div>
