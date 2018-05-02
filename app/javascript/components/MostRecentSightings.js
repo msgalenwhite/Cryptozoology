@@ -31,7 +31,6 @@ class MostRecentSightings extends Component {
 }
 
   componentDidMount() {
-    debugger
     this.triggerFetch()
   }
 
@@ -60,7 +59,8 @@ class MostRecentSightings extends Component {
   sendOutVotes(sightingId, voteValue) {
     const formData = {
       sightingId: sightingId,
-      userVote: voteValue
+      userVote: voteValue,
+      currentUserId: this.state.currentUserId
     }
 
     fetch("/api/v1/user_votes", {
