@@ -24,26 +24,29 @@ const Sighting = props => {
 
   return(
     <div className='sighting-tile row'>
-      <div className='columns small-1 sideways-thumbs'>
-        <i className='fa fa-thumbs-up'></i>
-        {props.user_vote}
-        <i className='fa fa-thumbs-down'></i>
-      </div>
-
       <div className='sighting-cryptid-name'>{props.cryptid_name}</div>
-      <div className='columns small-5 left-column'>
+      <div className='columns small-1 sideways-thumbs'>
+        <div className='icons'>
+          <i className='fa fa-thumbs-up'></i>
+          {props.user_vote}
+          <i className='fa fa-thumbs-down'></i>
+        </div>
+      </div>
+      <div className='columns small-12 medium-4 large-3 left-column'>
         <img className='cryptid-pic' src={props.pic_url} alt={`Cool picture of a ${props.cryptid_name}`} />
         <div className='user-name'>{props.user_name}</div>
         <div className='date'>(Sighted: {props.created_at})</div>
       </div>
-      <div className='columns small-7 right-column'>
+      <div className='columns small-12 medium-7 large-8  right-column'>
         <div>
           <span>Confidence in Sighting:</span>
           <div>{icons}</div>
         </div>
 
         <div>Sighted at: {props.location}</div>
-        <p>{props.description}</p>
+      </div>
+      <div className='row'>
+        <p className='columns small-12 sighting-description'>{props.description}</p>
       </div>
     </div>
   )

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Sighting from './Sighting'
-import SightingsContainer from '../containers/SightingsContainer'
 
 class MostRecentSightings extends Component {
   constructor(props){
@@ -9,6 +8,7 @@ class MostRecentSightings extends Component {
       sightings: []
     }
     this.generateTiles = this.generateTiles.bind(this)
+    this.sendOutVotes = this.sendOutVotes.bind(this)
   }
 
   componentDidMount() {
@@ -32,7 +32,9 @@ class MostRecentSightings extends Component {
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
   }
 
+  sendOutVotes() {
 
+  }
 
 
   generateTiles() {
@@ -61,7 +63,6 @@ class MostRecentSightings extends Component {
 
     return(
       <div>
-        <SightingsContainer />
         <h3 className='home-page-tile-title'>
           Recent Sightings:
         </h3>

@@ -226,4 +226,4 @@ sighting14 = Sighting.create!(
 )
 
 vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
-vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
+vote2 = UserVote.create!(user: member2, sighting: sighting2, vote: 1)

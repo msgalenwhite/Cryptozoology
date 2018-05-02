@@ -41,4 +41,15 @@
 .sideways-thumbs {
   display: flex;
   flex-direction: column;
+  line-height: 3em;
+  justify-content: flex-end;
+}
+
+.sighting-description {
+  display: block;
+}
+
+.fa-thumbs-up, .fa-thumbs-down {
+  font-size: 30px;
+  color: $dark-green;
 }
