@@ -2,7 +2,7 @@ class CryptidsController < ApplicationController
   def index
     @search_term = params[:name]
     if @search_term
-      @results = Cryptid.where('name LIKE ?', "%#{@search_term}%")
+      @results = Cryptid.where("name ILIKE ?", "%#{@search_term}%")
     else
       @results = Cryptid.all
     end
