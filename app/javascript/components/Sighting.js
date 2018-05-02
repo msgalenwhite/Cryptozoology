@@ -24,6 +24,12 @@ const Sighting = props => {
 
   return(
     <div className='sighting-tile row'>
+      <div className='columns small-1 sideways-thumbs'>
+        <i className='fa fa-thumbs-up'></i>
+        {props.user_vote}
+        <i className='fa fa-thumbs-down'></i>
+      </div>
+
       <div className='sighting-cryptid-name'>{props.cryptid_name}</div>
       <div className='columns small-5 left-column'>
         <img className='cryptid-pic' src={props.pic_url} alt={`Cool picture of a ${props.cryptid_name}`} />

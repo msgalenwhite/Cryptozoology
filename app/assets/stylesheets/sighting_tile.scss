@@ -37,3 +37,8 @@
   color: $dark-green;
   font-size: 1.3em;
 }
+
+.sideways-thumbs {
+  display: flex;
+  flex-direction: column;
+}
