@@ -40,10 +40,10 @@
     </section>
 
       <section class="search-field float-menu">
-          <%= form_tag("/cryptids", method: "get", class: "search-bar") do %>
-            <%= text_field_tag :name, params[:name] %>
-            <%= submit_tag 'Search Cryptids', name: nil, class: 'search-button' %>
-          <% end %>
+        <%= form_tag("/cryptids", method: "get", class: "search-bar") do %>
+          <%= text_field_tag :name, params[:name] %>
+          <%= submit_tag 'Search Cryptids', name: nil, class: 'search-button' %>
+        <% end %>
       </section>
 
 
