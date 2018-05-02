@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Sighting from './Sighting'
 
-class MostRecentSightings extends Component {
+class CryptidSightings extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -11,6 +11,9 @@ class MostRecentSightings extends Component {
   }
 
   componentDidMount() {
+    this.setState({
+      cryptidId: parseInt(this.props.params.id)
+    })
     fetch('/api/v1/sightings')
       .then ( response => {
         if ( response.ok ) {
@@ -23,7 +26,8 @@ class MostRecentSightings extends Component {
       })
       .then ( response => response.json() )
       .then ( response => {
-        let newResponse = response["sightings"]
+        const newResponse = response["sightings"]
+
         this.setState({
           sightings: newResponse
         })
@@ -32,31 +36,31 @@ class MostRecentSightings extends Component {
   }
 
   generateTiles() {
-    let tiles = this.state.sightings.map((sighting) => {
-      return(
-        <Sighting
-          key={sighting["id"]}
-          user_name={sighting["user_name"]}
-          pic_url={sighting["cryptid_pic"]}
-          cryptid_name={sighting["cryptid_name"]}
-          location={sighting["location"]}
-          description={sighting["description"]}
-          rating={sighting["rating"]}
-          created_at={sighting["formatted_date"]}
-        />
-      )
+    const cryptidId = parseInt(this.props.params.id)
+    const tiles = this.state.sightings.map((sighting) => {
+      if (sighting["cryptid_id"] === cryptidId) {
+        return(
+          <Sighting
+            key={sighting["id"]}
+            user_name={sighting["user_name"]}
+            pic_url={sighting["cryptid_pic"]}
+            cryptid_name={""}
+            location={sighting["location"]}
+            description={sighting["description"]}
+            rating={sighting["rating"]}
+            created_at={sighting["formatted_date"]}
+          />
+        )
+      }
     })
-
     return tiles
   }
 
   render(){
-    let tiles = this.generateTiles()
-
+    const tiles = this.generateTiles()
     return(
-      <div>
+      <div className='sightings-for-cryptid'>
         <h3 className='home-page-tile-title'>
-          Recent Sightings:
         </h3>
         {tiles}
       </div>
@@ -64,4 +68,4 @@ class MostRecentSightings extends Component {
   }
 }
 
-export default MostRecentSightings;
+export default CryptidSightings;

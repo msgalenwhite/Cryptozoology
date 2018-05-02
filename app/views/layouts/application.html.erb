@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Ubuntu" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Do+Hyeon|Ubuntu">
 <head>
   <title>Cryptozoology</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">Cryptozoology</a></h1>
+        <h1 class="header"><a href="/">Cryptozoology</a></h1>
       </li>
     </ul>
 
@@ -38,15 +38,22 @@
         </ul>
       </section>
 
+    <section class="search-field float-menu">
+      <%= form_tag("/cryptids", method: "get") do %>
+        Cryptids <%= text_field_tag :name, params[:name] %>
+        <%= submit_tag 'Search', name: nil %>
+      <% end %>
+    </section>
+
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <% unless current_user.profile_photo.nil? %>
+          <% if current_user.profile_photo.url %>
             <img src='<%= current_user.profile_photo.url %>' alt='Profile Photo' class='profile-photo'/>
           <% end %>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li class="dark-teal"><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
