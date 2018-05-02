@@ -1,5 +1,5 @@
 class SightingSerializer < ActiveModel::Serializer
-  attributes :id, :location, :description, :cryptid_pic, :rating, :formatted_date, :user_name, :cryptid_name, :cryptid_id
+  attributes :id, :location, :description, :cryptid_pic, :rating, :formatted_date, :user_name, :cryptid_name, :cryptid_id, :vote_total
 
   def cryptid_id
     object.cryptid.id
@@ -16,4 +16,8 @@ class SightingSerializer < ActiveModel::Serializer
   def formatted_date
     object.formatted_date
   end
+  def vote_total
+    UserVote.vote_total(object.id)
+  end
+
 end

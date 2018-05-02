@@ -10,7 +10,12 @@ class UserVote < ApplicationRecord
 
   validates :user_id, uniqueness: { scope: :sighting_id }
 
-  def vote_total
-    UserVote.sum(:vote)
+  def vote_total(id)
+    sighting_votes = UserVote.where(:sighting_id == id)
+    total = 0
+    sighting_votes.each do |record|
+      total += record.vote
+    end
+    total
   end
 end
