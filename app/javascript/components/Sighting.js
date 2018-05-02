@@ -27,9 +27,9 @@ const Sighting = props => {
       <div className='sighting-cryptid-name'>{props.cryptid_name}</div>
       <div className='columns small-1 sideways-thumbs'>
         <div className='icons'>
-          <i className='fa fa-thumbs-up'></i>
+          <i className='fa fa-thumbs-up' onClick={props.upvote}></i>
           {props.vote_total}
-          <i className='fa fa-thumbs-down'></i>
+          <i className='fa fa-thumbs-down' onClick={props.downvote}></i>
         </div>
       </div>
       <div className='columns small-12 medium-4 large-3 left-column'>

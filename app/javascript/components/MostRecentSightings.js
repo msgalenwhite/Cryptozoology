@@ -87,6 +87,13 @@ class MostRecentSightings extends Component {
 
   generateTiles() {
     const tiles = this.state.sightings.map((sighting) => {
+
+      const upVote = () => {
+        this.sendOutVotes(sighting["id"], 1)
+      }
+      const downVote = () => {
+        this.sendOutVotes(sighting["id"], -1)
+      }
       return(
         <Sighting
           key={sighting["id"]}
@@ -98,6 +105,8 @@ class MostRecentSightings extends Component {
           rating={sighting["rating"]}
           created_at={sighting["formatted_date"]}
           vote_total={sighting["vote_total"]}
+          upvote={upVote}
+          downvote={downVote}
         />
       )
     })
@@ -107,13 +116,10 @@ class MostRecentSightings extends Component {
 
   render(){
     let tiles = this.generateTiles()
-    let votes = () => {
-      this.sendOutVotes(1, -1)
-    }
     return(
       <div>
         <h3 className='home-page-tile-title'>
-          <span onClick= {votes} >Recent Sightings:</span>
+          <span>Recent Sightings:</span>
         </h3>
         {tiles}
       </div>
