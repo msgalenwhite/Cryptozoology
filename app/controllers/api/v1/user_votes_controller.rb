@@ -1,5 +1,4 @@
 class Api::V1::UserVotesController < ApplicationController
-  # before_action :authenticate_user!
   def create
     user_vote = UserVote.new(
       sighting_id: params[:sightingId],

@@ -25,5 +25,4 @@ Rails.application.routes.draw do
 
   resources :cryptids
 
-  get 'current_user' => "users#current_user"
 end
