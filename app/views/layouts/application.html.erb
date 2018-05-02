@@ -31,19 +31,21 @@
 
     <section class="dropdown menu align-left float-menu">
       <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Categories</a>
-        <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-          <% @categories.each do |category| %>
-          <li> <%= link_to category.name, category %></li>
+
+      <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+        <% @categories.each do |category| %>
+        <li> <%= link_to category.name, category %></li>
+        <% end %>
+      </ul>
+    </section>
+
+      <section class="search-field float-menu">
+          <%= form_tag("/cryptids", method: "get", class: "search-bar") do %>
+            <%= text_field_tag :name, params[:name] %>
+            <%= submit_tag 'Search Cryptids', name: nil, class: 'search-button' %>
           <% end %>
-        </ul>
       </section>
 
-    <section class="search-field float-menu">
-      <%= form_tag("/cryptids", method: "get") do %>
-        Cryptids <%= text_field_tag :name, params[:name] %>
-        <%= submit_tag 'Search', name: nil %>
-      <% end %>
-    </section>
 
     <section class="top-bar-section">
       <ul class="right">
