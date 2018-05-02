@@ -224,3 +224,6 @@ sighting14 = Sighting.create!(
   rating: 1,
   remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
 )
+
+vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
+vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)

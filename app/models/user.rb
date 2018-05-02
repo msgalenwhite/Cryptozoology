@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
-  
+
   mount_uploader :profile_photo, PhotoUploader
 
   has_many :sightings
   has_many :cryptids
+  has_many :user_votes
 end

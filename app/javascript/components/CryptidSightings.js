@@ -49,6 +49,8 @@ class CryptidSightings extends Component {
             description={sighting["description"]}
             rating={sighting["rating"]}
             created_at={sighting["formatted_date"]}
+            vote_total={sighting["vote_total"]}
+            user_vote={sighting["user_vote"]}
           />
         )
       }
