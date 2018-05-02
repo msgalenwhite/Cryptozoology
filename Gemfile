@@ -4,10 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.3.3'
 gem 'fog'
 gem 'carrierwave'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
-
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
