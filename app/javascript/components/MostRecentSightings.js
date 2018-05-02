@@ -5,7 +5,8 @@ class MostRecentSightings extends Component {
   constructor(props){
     super(props);
     this.state = {
-      sightings: []
+      sightings: [],
+      currentUserId: $.get('/current_user', function(result){result.id})
     }
     this.generateTiles = this.generateTiles.bind(this)
     this.sendOutVotes = this.sendOutVotes.bind(this)
@@ -13,6 +14,7 @@ class MostRecentSightings extends Component {
   }
 
   componentDidMount() {
+    debugger
     this.triggerFetch()
   }
 
@@ -88,11 +90,13 @@ class MostRecentSightings extends Component {
 
   render(){
     let tiles = this.generateTiles()
-
+    let votes = () => {
+      this.sendOutVotes(1, -1)
+    }
     return(
       <div>
         <h3 className='home-page-tile-title'>
-          <span>Recent Sightings:</span>
+          <span onClick= {votes} >Recent Sightings:</span>
         </h3>
         {tiles}
       </div>
