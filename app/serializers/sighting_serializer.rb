@@ -22,16 +22,20 @@ class SightingSerializer < ActiveModel::Serializer
   end
 
   def vote_total
-    UserVote.vote_total(object.id)
+    sighting_votes = UserVote.where(sighting_id: object.id).pluck(:vote)
+    sighting_votes.sum
   end
 
   def user_vote
-    active_vote = UserVote.where(:sighting_id == object.id, :user == current_user)
-    if active_vote.length == 0
-      return 0
-    else
-      return active_vote.vote
+    if current_user
+      active_vote = UserVote.find_by sighting_id: object.id, user: current_user
+      if active_vote.nil?
+        return 0
+      else
+        return active_vote.vote
+      end
     end
+    return 0
   end
 
 end
