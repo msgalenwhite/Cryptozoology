@@ -13,7 +13,7 @@
   margin-right: 10px;
 }
 
-.top-bar .name h1 a{
+.top-bar .name h1 {
   font-family: 'Ubuntu', sans-serif;
   color: $yellow-ish
 }
@@ -33,5 +33,27 @@
   .profile-photo {
     height: 2.8em;
     width: 2.8em;
+  }
+  .search-bar {
+    color: white;
+    weight: normal;
+    font-size: rem-calc(17);
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  .search-header {
+    margin-right: 10px;
+  }
+  .search-button {
+    margin-left: 10px;
+    color: black;
+    font-size: .8em;
+    background-color: $yellow-ish;
+    border-radius: 5px;
+    border: none;
+  }
+  .search-button:hover {
+    opacity: .7;
   }
 }
