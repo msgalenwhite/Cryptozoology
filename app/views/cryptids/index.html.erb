@@ -1,0 +1,7 @@
+<h1 class='index-title'>Search Results for: "<%= @search_term %>"</h1>
+<% @results.each do |result| %>
+  <div class='link-container'>
+    <%= link_to result.name, result %><br>
+    <%= result.description %><br>
+  </div>
+<% end %>

@@ -1,11 +1,11 @@
+@import 'colors';
+
 .sighting-tile {
-  background-color: white;
   min-height: 8em;
   width: 100%;
 
   .left-column {
     padding: 20px;
-    background-color: pink;
     text-align: center;
 
     .cryptid-pic {
@@ -21,11 +21,19 @@
   }
   .right-column {
     padding: 10px;
-    background: yellow;
   }
-
-  .confidence-icon {
-    width: 11%;
-    padding-left: .4em;
-  }
+}
+.confidence-icon {
+  width: 30px;
+  padding-left: .4em;
+  opacity: .5;
+}
+.chosen-icon {
+  width: 45px;
+  opacity: 1;
+}
+.sighting-cryptid-name {
+  text-align: center;
+  color: $dark-green;
+  font-size: 1.3em;
 }
