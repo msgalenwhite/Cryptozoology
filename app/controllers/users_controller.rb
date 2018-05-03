@@ -5,10 +5,11 @@ def index
     if current_user.admin?
       @users = User.all
     else
-      @users = [current_user]
+      flash[:notice] = "You must be logged in as an administrator to view this page."
+      redirect_to root_path
     end
   else
-    flash[:notice] = "You must be logged in to view this page."
+    flash[:notice] = "You must be logged in as an administrator to view this page."
     redirect_to root_path
   end
 end
