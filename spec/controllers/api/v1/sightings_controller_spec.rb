@@ -28,7 +28,6 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[0]["location"]).to eq(first_sighting.location)
       expect(returned_json[0]["rating"]).to eq(first_sighting.rating)
       expect(returned_json[0]["vote_total"]).to eq 2
-      expect(returned_json[0]["user_vote"]).to eq 0
 
       expect(returned_json[1]["id"]).to eq(second_sighting.id)
       expect(returned_json[1]["user_name"]).to eq(second_sighting.user.name)
@@ -37,7 +36,6 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[1]["location"]).to eq(second_sighting.location)
       expect(returned_json[1]["rating"]).to eq(second_sighting.rating)
       expect(returned_json[1]["vote_total"]).to eq 1
-      expect(returned_json[1]["user_vote"]).to eq 0
 
       expect(returned_json[2]["id"]).to eq(third_sighting.id)
       expect(returned_json[2]["user_name"]).to eq(third_sighting.user.name)
@@ -46,7 +44,6 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(returned_json[2]["location"]).to eq(third_sighting.location)
       expect(returned_json[2]["rating"]).to eq(third_sighting.rating)
       expect(returned_json[2]["vote_total"]).to eq 0
-      expect(returned_json[2]["user_vote"]).to eq 0
     end
   end
 end
