@@ -103,28 +103,29 @@ class SightingsContainer extends Component {
   generateTiles() {
     const sightingsArray = this.currentPageSightings()
 
+// if id passed in params, filter by id, else ret
     const tiles = sightingsArray.map((sighting) => {
-      const upVote = () => {
-        this.sendOutVotes(sighting["id"], 1)
-      }
-      const downVote = () => {
-        this.sendOutVotes(sighting["id"], -1)
-      }
-      return(
-        <Sighting
-          key={sighting["id"]}
-          user_name={sighting["user_name"]}
-          pic_url={sighting["cryptid_pic"]}
-          cryptid_name={sighting["cryptid_name"]}
-          location={sighting["location"]}
-          description={sighting["description"]}
-          rating={sighting["rating"]}
-          created_at={sighting["formatted_date"]}
-          vote_total={sighting["vote_total"]}
-          upvote={upVote}
-          downvote={downVote}
-        />
-      )
+        const upVote = () => {
+          this.sendOutVotes(sighting["id"], 1)
+        }
+        const downVote = () => {
+          this.sendOutVotes(sighting["id"], -1)
+        }
+        return(
+          <Sighting
+            key={sighting["id"]}
+            user_name={sighting["user_name"]}
+            pic_url={sighting["cryptid_pic"]}
+            cryptid_name={sighting["cryptid_name"]}
+            location={sighting["location"]}
+            description={sighting["description"]}
+            rating={sighting["rating"]}
+            created_at={sighting["formatted_date"]}
+            vote_total={sighting["vote_total"]}
+            upvote={upVote}
+            downvote={downVote}
+          />
+        )
     })
     return tiles
   }
