@@ -105,7 +105,7 @@ sighting1 = Sighting.create!(
   location: "The Woods of the Pacific Northwest",
   description: "I saw him walk by, but maybe he was just a guy in a suit.  He looked like he may be wearing a watch.",
   rating: 2,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://i.ytimg.com/vi/RT_kpoEs1Lk/hqdefault.jpg"
 )
 
 sighting2 = Sighting.create!(
@@ -114,7 +114,7 @@ sighting2 = Sighting.create!(
   location: "The YMCA - Portland, OR",
   description: "This dude was 100% a Sasquatch.  He looks like he shaved, but he could bench 800 pounds.",
   rating: 4,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://media.allure.com/photos/5a4bd031dd0c5b5b96b218c8/1:1/w_767/Screen%2520Shot%25202018-01-02%2520at%25201.07.11%2520PM.png"
 )
 
 sighting3 = Sighting.create!(
