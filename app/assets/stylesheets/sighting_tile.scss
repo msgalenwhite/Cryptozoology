@@ -37,3 +37,17 @@
   color: $dark-green;
   font-size: 1.3em;
 }
+.button-div {
+  display: flex;
+  justify-content: space-around;
+  .page-button {
+    color: $dark-green;
+    font-size: 1.2em;
+    background-color: $yellow-ish;
+    padding: .4em .8em;
+    border-radius: 5px;
+  }
+  .page-button:hover {
+    opacity: .7;
+  }
+}
