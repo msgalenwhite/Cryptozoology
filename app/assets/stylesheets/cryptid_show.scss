@@ -1,4 +1,5 @@
 @import 'colors';
+
 .cryptid-show-title {
   text-align: center;
   color: $dark-green;
@@ -9,7 +10,7 @@
 .cryptid-container {
   background-color: white;
   border-radius: 4px;
-  margin: 0 5%;
+  margin: 0 auto;
   padding: .8em;
   display: flex;
   flex-direction: column;
@@ -20,6 +21,7 @@
   float: left;
   margin-right: .8em;
   margin-bottom: .8em;
+  max-width: 60%;
 }
 
 .cryptid_sightings {
@@ -29,6 +31,8 @@
   padding: 0 1em;
 }
 
-.sightings-for-cryptid {
-  padding-right: 1em;
+.react-div {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 10%;
 }
