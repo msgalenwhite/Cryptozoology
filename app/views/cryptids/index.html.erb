@@ -2,7 +2,7 @@
 
 <% @results.each do |result| %>
   <div class='link-container tile-background search-results'>
-    <%= link_to result.name, result %><br>
+    <h3><%= link_to result.name, result, :class => 'search-link-header' %></h3><br>
     <%= result.description %><br>
   </div>
 <% end %>
