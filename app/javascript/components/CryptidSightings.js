@@ -6,7 +6,8 @@ class CryptidSightings extends Component {
     super(props);
     this.state = {
       sightings: [],
-      currentUserId: ""
+      currentUserId: "",
+      cryptidId: null
     }
     this.generateTiles = this.generateTiles.bind(this)
     this.sendOutVotes = this.sendOutVotes.bind(this)
@@ -28,7 +29,7 @@ class CryptidSightings extends Component {
         }
     }
     return "";
-}
+  }
   componentDidMount() {
     this.setState({
       cryptidId: parseInt(this.props.params.id),
@@ -89,24 +90,20 @@ class CryptidSightings extends Component {
   }
 
   generateTiles() {
-    const cryptidId = parseInt(this.props.params.id)
+    let upVote;
+    let downVote;
 
+    const cryptidId = this.state.cryptidId
     const tiles = this.state.sightings.map((sighting) => {
       if (sighting["cryptid_id"] === cryptidId) {
-        if (this.state.currentUserId != nil) {
-        const upVote = () => {
-          this.sendOutVotes(sighting["id"], 1)
+        if (this.state.currentUserId !== null) {
+          upVote = () => {
+            this.sendOutVotes(sighting["id"], 1)
+          }
+          downVote = () => {
+            this.sendOutVotes(sighting["id"], -1)
+          }
         }
-        const downVote = () => {
-          this.sendOutVotes(sighting["id"], -1)
-        }
-      } else {
-        const upVote = () => {
-                }
-        const downVote = () => {
-        }
-      }
-
         return(
           <Sighting
             key={sighting["id"]}
