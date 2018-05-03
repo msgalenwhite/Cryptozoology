@@ -37,19 +37,17 @@
   color: $dark-green;
   font-size: 1.3em;
 }
-
-.sideways-thumbs {
+.button-div {
   display: flex;
-  flex-direction: column;
-  line-height: 3em;
-  justify-content: flex-end;
-}
-
-.sighting-description {
-  display: block;
-}
-
-.fa-thumbs-up, .fa-thumbs-down {
-  font-size: 30px;
-  color: $dark-green;
+  justify-content: space-around;
+  .page-button {
+    color: $dark-green;
+    font-size: 1.2em;
+    background-color: $yellow-ish;
+    padding: .4em .8em;
+    border-radius: 5px;
+  }
+  .page-button:hover {
+    opacity: .7;
+  }
 }
