@@ -17,18 +17,20 @@
  */
 
 @import "colors";
-//
-// .half-height{
-//  min-height: 50vh;
-// }
 
 body {
   background-color: $dark-teal;
   font-family: 'Ubuntu', sans-serif;
 }
 
-
-
 .icon-credit-tag {
   font-size: .9em;
+}
+
+.flash {
+  background-color: $light-pumpkin;
+  font-size: 1.5em;
+  text-align: center;
+  min-height: 2.5em;
+  line-height: 2.5em;
 }
