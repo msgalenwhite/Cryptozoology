@@ -129,7 +129,7 @@ sighting3 = Sighting.create!(
   location: "Loch Ness, Scotland",
   description: "I was in my rowboat and Nessie ducked her head in to say hello.  I gave her a hug but she dived underwater before I could take a selfie. ",
   rating: 5,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://garrulousgwendoline.files.wordpress.com/2013/07/image90.jpg"
 )
 
 sighting4 = Sighting.create!(
@@ -138,7 +138,7 @@ sighting4 = Sighting.create!(
   location: "Girl Scout Troop \#469 - South Park, CO",
   description: 'A young Girl Scout was trying to sell me Thin Mint cookies.  She said she needed about $3.50.  It was about that time I realized this "Girl Scout" was actually 3 stories tall and a pleseosaur from the Paleolithic Era',
   rating: 1,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://static.fjcdn.com/pictures/Loch_992da7_2002031.jpg"
 )
 
 sighting5 = Sighting.create!(
@@ -147,7 +147,7 @@ sighting5 = Sighting.create!(
   location: "Juarez, Mexico",
   description: "I had 23 goats.  Now I have 4 goats.",
   rating: 3,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://www.versionpb.com/wp-content/uploads/2016/10/TheMissingGoat.jpg"
 )
 
 sighting6 = Sighting.create!(
@@ -156,7 +156,7 @@ sighting6 = Sighting.create!(
   location: "El Paso, TX",
   description: "I thought it was a coyote, but it looked too fast for that.  I keep my goats inside.",
   rating: 2,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://iplanttheseeds.files.wordpress.com/2011/07/chupacabra1-1.jpg"
 )
 
 sighting7 = Sighting.create!(
@@ -165,7 +165,7 @@ sighting7 = Sighting.create!(
   location: "Dubai, Qatar",
   description: "I met a man who told me he was a Jinn, but I think he was just a rich oil baron throwing his money around when he said he could make my wishes come true.",
   rating: 2,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "http://gulfbusiness.com/wp-content/uploads/Screen-Shot-2016-05-11-at-9.28.40-AM.png"
 )
 
 sighting8 = Sighting.create!(
@@ -174,7 +174,7 @@ sighting8 = Sighting.create!(
   location: "Agrabah, Jordan",
   description: "I really wanted to get with this princess with a pet tiger and this big blue jinn helped me out.",
   rating: 5,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://i.ytimg.com/vi/12fN1oK0ARM/maxresdefault.jpg"
 )
 
 sighting9 = Sighting.create!(
@@ -183,7 +183,7 @@ sighting9 = Sighting.create!(
   location: "Outside Machu Pichu",
   description: "My grandmother always told me to watch out for mosquitos as they are likely the Peuchen having changed shape, but she also has dementia.",
   rating: 1,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2iLzFgiAn_6mLkchuVq15B54ZZDYXuoU2rT-hnWU1geBivzfc"
 )
 
 sighting10 = Sighting.create!(
@@ -192,7 +192,7 @@ sighting10 = Sighting.create!(
   location: "Santiago, Chile",
   description: "The Peuchen follows me around singing showtunes, but whenever someone else shows up he changes in to an ordinary frog.  My whole family thinks I'm crazy.",
   rating: 4,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://i.ytimg.com/vi/QuHA3p1M_Ns/maxresdefault.jpg"
 )
 
 sighting11 = Sighting.create!(
@@ -201,7 +201,7 @@ sighting11 = Sighting.create!(
   location: "Mogadishu, Somalia",
   description: "A Werehyena has captured our shipping vessel.  He is the Captain now." ,
   rating: 4,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://i.pinimg.com/originals/e7/23/3b/e7233ba8dfc89cc6fbfae7f6bb6d5f7e.jpg"
 )
 
 sighting12 = Sighting.create!(
@@ -210,7 +210,7 @@ sighting12 = Sighting.create!(
   location: "El Geneina, Sudan",
   description: "I think I was attacked by a Werehyena, but he left me alone once he realized that I didn't have a girlfriend.  I even get friend-zoned by Werehyenas.",
   rating: 3,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "http://i.imgur.com/QpQ9pfS.jpg"
 )
 
 sighting13 = Sighting.create!(
@@ -218,8 +218,8 @@ sighting13 = Sighting.create!(
   cryptid: megalodon ,
   location: "Phillipine Sea",
   description: "A very large shark swam by my catamaran.  Like, so big.  Maybe it was a Megaladon?  I'm not good at identifying fish,",
-  rating: 2,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  rating: 3,
+  remote_photo_url: "https://i2-prod.mirror.co.uk/incoming/article9399873.ece/ALTERNATES/s1200/Drone-films-Shark.jpg"
 )
 
 sighting14 = Sighting.create!(
@@ -228,7 +228,7 @@ sighting14 = Sighting.create!(
   location: "Solomon Sea",
   description: "My cousin says he had a megaladon chew through his fishing lines, but he only has a 14-footer so I think he is full of it.",
   rating: 1,
-  remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
+  remote_photo_url: "https://i.ytimg.com/vi/2dhjhWc4ums/maxresdefault.jpg"
 )
 
 vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
