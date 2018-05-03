@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :sightings
   has_many :cryptids
+
+  def formatted_date
+    created_at.strftime("%m/%d/%Y")
+  end
 end
