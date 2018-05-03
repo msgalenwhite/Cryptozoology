@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :user_votes
+    end
+  end
+
   resources :sightings, only: [:new, :create]
 
   resources :categories, only: [:index, :show]do
@@ -18,4 +24,5 @@ Rails.application.routes.draw do
   end
 
   resources :cryptids
+
 end

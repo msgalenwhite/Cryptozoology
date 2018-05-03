@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
- # Prevent CSRF attacks by raising an exception.
 
  protect_from_forgery unless: -> { request.format.json? }
 
@@ -21,4 +20,7 @@ class ApplicationController < ActionController::Base
  def set_regions
    @regions = Region.all
  end
+
+ private
+
 end
