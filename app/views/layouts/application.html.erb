@@ -45,12 +45,9 @@
           <%= submit_tag 'Search Cryptids', name: nil, class: 'search-button' %>
         <% end %>
       </section>
-
-      <ul>
-        <li>
-          <h1 class="user-link"><a href= <%= users_path %>>Users</a></h1>
-        </li>
-      </ul>
+      <section class='float-menu'>
+        <a class='top-bar' href='<%= users_path %>'><h1 class="user-link">Users</h1></a>
+      </section>
 
     <section class="top-bar-section">
       <ul class="right">
