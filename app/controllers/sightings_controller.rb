@@ -38,7 +38,7 @@ class SightingsController < ApplicationController
     @sighting = Sighting.find(params[:id])
     if !current_user.nil?
       if current_user.admin? || current_user == @sighting.user
-        @cryptid = @sighitng.cryptid
+        @cryptid = @sighting.cryptid
         @sighting.destroy
         flash[:notice] = "You have deleted this sighting"
         redirect_to "/cryptids/#{@cryptid.id}"
