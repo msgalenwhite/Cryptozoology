@@ -24,7 +24,11 @@ const Sighting = props => {
 
   return(
     <div className='sighting-tile row'>
-      <div className='sighting-cryptid-name'>{props.cryptid_name}</div>
+      <div className='sighting-cryptid-name'>
+        <a href={`/cryptids/${props.cryptid_id}`} className='sighting-link'>
+          <span className='sighting-link-text'>{props.cryptid_name}</span>
+        </a>
+      </div>
       <div className='columns small-1 sideways-thumbs'>
         <div className='icons'>
           <i className='fa fa-thumbs-up' onClick={props.upvote}></i>

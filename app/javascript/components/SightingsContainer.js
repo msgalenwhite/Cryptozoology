@@ -116,6 +116,7 @@ class SightingsContainer extends Component {
           user_name={sighting["user_name"]}
           pic_url={sighting["cryptid_pic"]}
           cryptid_name={sighting["cryptid_name"]}
+          cryptid_id={sighting["cryptid_id"]}
           location={sighting["location"]}
           description={sighting["description"]}
           rating={sighting["rating"]}
