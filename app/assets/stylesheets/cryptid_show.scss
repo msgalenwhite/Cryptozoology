@@ -1,4 +1,5 @@
 @import 'colors';
+
 .cryptid-show-title {
   text-align: center;
   color: $dark-green;
@@ -9,7 +10,7 @@
 .cryptid-container {
   background-color: white;
   border-radius: 4px;
-  margin: 0 5%;
+  margin: 0 auto;
   padding: .8em;
   display: flex;
   flex-direction: column;
