@@ -2,7 +2,6 @@ import HomePage from '../../app/javascript/containers/HomePage'
 import AboutUs from '../../app/javascript/components/AboutUs'
 import Inspiration from '../../app/javascript/components/Inspiration'
 import SightingsContainer from '../../app/javascript/components/SightingsContainer'
-import HighestRatedCryptid from '../../app/javascript/components/HighestRatedCryptid'
 
 describe('HomePage', () => {
   let wrapper;

@@ -1,7 +1,7 @@
 import React from 'react'
 import SightingsContainer from '../components/SightingsContainer'
 
-const RecentSightings = props => {
+const MostRecentSightings = props => {
 
   return(
     <div>
@@ -13,4 +13,4 @@ const RecentSightings = props => {
   )
 }
 
-export default RecentSightings
+export default MostRecentSightings

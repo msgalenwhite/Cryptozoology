@@ -1,7 +1,6 @@
 import React from 'react'
 import Inspiration from '../components/Inspiration'
-import HighestRatedCryptid from '../components/HighestRatedCryptid'
-import RecentSightings from '../components/RecentSightings'
+import MostRecentSightings from '../components/MostRecentSightings'
 import AboutUs from '../components/AboutUs'
 
 const HomePage = props => {
