@@ -8,6 +8,8 @@ class SightingsContainer extends Component {
       sightings: [],
       currentPage: 0
     }
+    this.changeCurrentPage = this.changeCurrentPage.bind(this)
+    this.currentPageSightings = this.currentPageSightings.bind(this)
     this.generateTiles = this.generateTiles.bind(this)
   }
 
@@ -32,8 +34,23 @@ class SightingsContainer extends Component {
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
   }
 
+  changeCurrentPage(change) {
+    const newPage = this.state.currentPage + change
+    this.setState({
+      currentPage: newPage
+    })
+  }
+
+  currentPageSightings() {
+    let startIndex = (this.state.currentPage * 6)
+    let endIndex = startIndex + 5
+    return this.state.sightings.slice(startIndex, endIndex)
+  }
+
   generateTiles() {
-    let tiles = this.state.sightings.map((sighting) => {
+    const sightingsArray = this.currentPageSightings()
+
+    const tiles = sightingsArray.map((sighting) => {
       return(
         <Sighting
           key={sighting["id"]}
@@ -47,20 +64,39 @@ class SightingsContainer extends Component {
         />
       )
     })
-
     return tiles
   }
 
   render(){
-    let tiles = this.generateTiles()
+    let tiles;
+    let buttons;
+    if (this.state.sightings.length > 0) {
+      tiles = this.generateTiles()
+
+      const goForward = () => {
+        this.changeCurrentPage(1)
+      }
+      const goBack = () => {
+        this.changeCurrentPage(-1)
+      }
+
+      buttons =
+        <div className='button-div'>
+          <button onClick={goBack} className='page-button'>Newer</button>
+          <button onClick={goForward} className='page-button'>Older</button>
+        </div>
+    } else {
+      tiles = "It doesn't look like there have been any sightings yet.  Would you like to contribute one?"
+      buttons =
+        <div className='button-div'>
+          <a className='page-button' href='/sightings/new'>Report a Sighting</a>
+        </div>
+    }
 
     return(
       <div>
         {tiles}
-        <div className='button-div'>
-          <button className='page-button'>Newer</button>
-          <button className='page-button'>Older</button>
-        </div>
+        {buttons}
       </div>
     )
   }
