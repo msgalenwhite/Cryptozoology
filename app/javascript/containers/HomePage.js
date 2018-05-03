@@ -1,7 +1,7 @@
 import React from 'react'
 import Inspiration from '../components/Inspiration'
 import HighestRatedCryptid from '../components/HighestRatedCryptid'
-import MostRecentSightings from '../components/MostRecentSightings'
+import RecentSightings from '../components/RecentSightings'
 import AboutUs from '../components/AboutUs'
 
 const HomePage = props => {
@@ -22,7 +22,7 @@ const HomePage = props => {
           <Inspiration/>
         </div>
         <div className="columns small-12 medium-5 tile-background">
-          <MostRecentSightings/>
+          <RecentSightings/>
         </div>
       </div>
       <a href="https://icons8.com" className='icon-credit-tag'>Icon pack by Icons8</a>

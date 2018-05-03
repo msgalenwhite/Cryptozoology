@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import Sighting from './Sighting'
 
-class MostRecentSightings extends Component {
+class SightingsContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      sightings: []
+      sightings: [],
+      currentPage: 0
     }
     this.generateTiles = this.generateTiles.bind(this)
   }
@@ -55,13 +56,14 @@ class MostRecentSightings extends Component {
 
     return(
       <div>
-        <h3 className='home-page-tile-title'>
-          Recent Sightings:
-        </h3>
         {tiles}
+        <div className='button-div'>
+          <button className='page-button'>Newer</button>
+          <button className='page-button'>Older</button>
+        </div>
       </div>
     )
   }
 }
 
-export default MostRecentSightings;
+export default SightingsContainer;

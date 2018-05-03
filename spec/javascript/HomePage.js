@@ -1,7 +1,7 @@
 import HomePage from '../../app/javascript/containers/HomePage'
 import AboutUs from '../../app/javascript/components/AboutUs'
 import Inspiration from '../../app/javascript/components/Inspiration'
-import MostRecentSightings from '../../app/javascript/components/MostRecentSightings'
+import SightingsContainer from '../../app/javascript/components/SightingsContainer'
 import HighestRatedCryptid from '../../app/javascript/components/HighestRatedCryptid'
 
 describe('HomePage', () => {
@@ -20,7 +20,7 @@ describe('HomePage', () => {
     expect(wrapper.find(AboutUs)).toBePresent()
   })
   it ("renders list of the most recent sightings", () => {
-    expect(wrapper.find(MostRecentSightings)).toBePresent()
+    expect(wrapper.find(SightingsContainer)).toBePresent()
   })
   it ("renders list of highest rated cryptids", () => {
     expect(wrapper.find(HighestRatedCryptid)).toBePresent()
