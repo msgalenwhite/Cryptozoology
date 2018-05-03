@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Do+Hyeon|Ubuntu">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
   <title>Cryptozoology</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,6 +47,13 @@
         <% end %>
       </section>
 
+      <% if current_user.nil? == false %>
+        <% if current_user.admin? %>
+          <section class='float-menu'>
+            <a class='top-bar right' href='<%= users_path %>'><h1 class="user-link">Users</h1></a>
+          </section>
+        <% end %>
+      <% end %>
 
     <section class="top-bar-section">
       <ul class="right">

@@ -5,28 +5,34 @@
 #
 #   movies = Movie.find_or_create_by([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-admin = User.new
-admin.email = "admin@fakeemail.com"
-admin.password = "password"
-admin.password_confirmation = "password"
-admin.name = "Admin"
-admin.admin = true
-admin.save!
+admin = User.create!(
+  email: "admin@fakeemail.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Admin",
+  admin: true,
+  remote_profile_photo_url:"https://i.pinimg.com/originals/0d/a7/74/0da77405735d4c72e9ca457b18974053.jpg",
+  bio: "I founded this site as a cover for finding my ex-girlfriend.  She was very hairy."
+)
 
-member = User.new
-member.email = "member@fakeemail.com"
-member.password = "password"
-member.password_confirmation = "password"
-member.name = "Member"
-member.admin = false
-member.save!
+member = User.create!(
+  email: "member@fakeemail.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Sally Searcher",
+  admin: false,
+  remote_profile_photo_url:"https://1.bp.blogspot.com/-wJEYTPJaDmg/WGXLGN_xHDI/AAAAAAAAhX0/fKyYjpTf7tYBIXG11-POByBUrxqRVOC6wCLcB/s1600/DSCF4536.JPG",
+  bio: "I'm always on the hunt for new taste makers.  What is nessie wearing?"
+)
 
-member2 = User.new
-member2.email = "member2@fakeemail.com"
-member2.password = "password"
-member2.password_confirmation = "password"
-member2.name = "Member 2"
-member2.save!
+member2 = User.create!(
+  email: "member2@fakeemail.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Frank Finder",
+  remote_profile_photo_url:"https://www.proprofs.com/quiz-school/user_upload/ckeditor/EcoNerd(2).jpg",
+  bio: "Glaven! Hellooo, nice lady!! Are you maybe looking for chupacabras like me, perhaps!"
+)
 
 
 sea_monsters = Category.find_or_create_by!(name: "Sea Monsters")
@@ -224,3 +230,6 @@ sighting14 = Sighting.create!(
   rating: 1,
   remote_photo_url: "https://cdn.theatlantic.com/assets/media/img/mt/2016/03/johnoliver/lead_960_540.jpg?1522795785"
 )
+
+vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
+vote2 = UserVote.create!(user: member2, sighting: sighting2, vote: 1)

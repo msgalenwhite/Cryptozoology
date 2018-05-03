@@ -3,7 +3,7 @@
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: $yellow-ish;
   font-family: 'Ubuntu', sans-serif;
-    color: black;
+  color: black;
 }
 
 .top-bar a {
@@ -52,8 +52,18 @@
     background-color: $yellow-ish;
     border-radius: 5px;
     border: none;
+    margin-right: 10px;
+    display: flex;
   }
   .search-button:hover {
     opacity: .7;
+  }
+  .user-link {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
   }
 }

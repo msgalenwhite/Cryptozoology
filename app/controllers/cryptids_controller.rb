@@ -1,4 +1,5 @@
 class CryptidsController < ApplicationController
+  before_action :set_user
   def index
     @search_term = params[:name]
     if @search_term
@@ -83,4 +84,13 @@ private
   def cryptid_params
     params.require(:cryptid).permit(:name, :photo, :description, :region_id, :category_id)
   end
+
+  def set_user
+    if current_user
+      cookies[:userid] = current_user.id
+    else
+      cookies[:userid] = 0
+    end
+  end
+
 end
