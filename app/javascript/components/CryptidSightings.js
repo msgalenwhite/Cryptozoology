@@ -38,7 +38,6 @@ class CryptidSightings extends Component {
   }
 
   triggerFetch() {
-    debugger
     fetch('/api/v1/sightings')
       .then ( response => {
         if ( response.ok ) {
