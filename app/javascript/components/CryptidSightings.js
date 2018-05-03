@@ -38,6 +38,7 @@ class CryptidSightings extends Component {
   }
 
   triggerFetch() {
+    debugger
     fetch('/api/v1/sightings')
       .then ( response => {
         if ( response.ok ) {
@@ -93,12 +94,20 @@ class CryptidSightings extends Component {
 
     const tiles = this.state.sightings.map((sighting) => {
       if (sighting["cryptid_id"] === cryptidId) {
+        if (this.state.currentUserId != nil) {
         const upVote = () => {
           this.sendOutVotes(sighting["id"], 1)
         }
         const downVote = () => {
           this.sendOutVotes(sighting["id"], -1)
         }
+      } else {
+        const upVote = () => {
+                }
+        const downVote = () => {
+        }
+      }
+
         return(
           <Sighting
             key={sighting["id"]}

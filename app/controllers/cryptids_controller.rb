@@ -86,7 +86,11 @@ private
   end
 
   def set_user
-    cookies[:userid] = current_user.id
+    if current_user
+      cookies[:userid] = current_user.id
+    else
+      cookies[:userid] = 0
+    end
   end
 
 end

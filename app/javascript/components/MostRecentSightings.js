@@ -89,6 +89,7 @@ class MostRecentSightings extends Component {
     const tiles = this.state.sightings.map((sighting) => {
 
       const upVote = () => {
+        
         this.sendOutVotes(sighting["id"], 1)
       }
       const downVote = () => {
