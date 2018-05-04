@@ -90,17 +90,19 @@ class CryptidSightings extends Component {
   }
 
   generateTiles() {
-    let upVote;
-    let downVote;
 
     const cryptidId = this.state.cryptidId
-    const tiles = this.state.sightings.map((sighting) => {
-      if (sighting["cryptid_id"] === cryptidId) {
+    let filteredSightings = this.state.sightings.map((sighting) => {
+      if (sighting["id"] === cryptidId) {
+        return sighting
+      }
+    })
+    const tiles = filteredSightings.map((sighting) => {
         if (this.state.currentUserId !== null) {
-          upVote = () => {
+          const upVote = () => {
             this.sendOutVotes(sighting["id"], 1)
           }
-          downVote = () => {
+          const downVote = () => {
             this.sendOutVotes(sighting["id"], -1)
           }
         }
@@ -120,7 +122,6 @@ class CryptidSightings extends Component {
             downvote={downVote}
           />
         )
-      }
     })
     return tiles
   }
