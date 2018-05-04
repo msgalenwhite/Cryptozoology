@@ -58,7 +58,7 @@ bigfoot = Cryptid.create!(
   category: hairy_hominids
 )
 nessie = Cryptid.create!(
-  name: "The Loch Ness Monster",
+  name: "Loch Ness Monster",
   remote_photo_url:"https://upload.wikimedia.org/wikipedia/en/5/5e/Hoaxed_photo_of_the_Loch_Ness_monster.jpg",
   description: "In Scottish folklore, the Loch Ness Monster or Nessie, is an aquatic being which reputedly inhabits Loch Ness in the Scottish Highlands. It is similar to other supposed lake monsters in Scotland and elsewhere, and is often described as being large in size, with a long neck and one or more humps protruding from the water. Popular interest and belief in the creature has varied since it was brought to worldwide attention in 1933. Evidence of its existence is anecdotal, with a few disputed photographs and sonar readings.",
   user: member,

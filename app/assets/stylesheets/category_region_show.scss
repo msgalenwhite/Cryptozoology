@@ -26,7 +26,7 @@
   padding: 1em;
 }
 .image-line-height{
-  line-height: 2em;
+  line-height: 3em;
 }
 
 .dino-bullet{
@@ -42,6 +42,8 @@
 .cryptid-links a {
   color: $dark-green;
   font-size: 2em;
+  padding-top: 2.5em;
+  padding-bottom: 2em;
 }
 
 .link-container, .highlight-container  {
@@ -52,5 +54,15 @@
   margin-left: 5%;
 }
 .highlight-container {
-  margin-right: 5%;
+  margin-right: 5%
+}
+
+.cryptid-index-photo {
+  max-height: 5em;
+  float: right;
+  margin-bottom: 1em
+
+}
+.cryptid-list {
+  list-style: none;
 }
