@@ -20,10 +20,10 @@ feature 'user can submit a sighting' do
     visit new_sighting_path
 
     fill_in "Where did you see it?", with: "location"
-    fill_in "Description", with: "description"
+    fill_in "Tell us what you saw:", with: "description"
     select cryptid.name, from: "Choose a Cryptid"
     choose('5')
-    attach_file "Photo", "#{Rails.root}/spec/support/images/purple_flowers.jpg"
+    attach_file "Share a photo:", "#{Rails.root}/spec/support/images/purple_flowers.jpg"
 
     click_button 'Create Sighting'
 
