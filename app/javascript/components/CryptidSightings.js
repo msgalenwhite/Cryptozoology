@@ -56,7 +56,6 @@ class CryptidSightings extends Component {
         this.setState({
           sightings: newResponse
         })
-        debugger
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
   }
