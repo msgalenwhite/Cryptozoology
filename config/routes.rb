@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sightings, only: [:new, :create]
+  resources :sightings, only: [:new, :create, :edit, :update]
 
   resources :categories, only: [:index, :show]do
     resources :cryptids, only: [:show]

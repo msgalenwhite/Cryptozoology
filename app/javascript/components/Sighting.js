@@ -53,6 +53,7 @@ const Sighting = props => {
         <p className='columns small-12 sighting-description'>{props.description}</p>
       </div>
       <a href={`/sightings/destroy/${props.id}`}>Delete</a>
+      <a href={`/sightings/${props.id}/edit`}>Edit</a>
     </div>
   )
 }

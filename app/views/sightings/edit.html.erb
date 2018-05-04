@@ -1,0 +1,33 @@
+<h1 class='index-title'>Edit Your Sighting</h1>
+<div class='new-form'>
+  <%= form_for @sighting do |f| %>
+    <div>
+      <%= f.label :location, "Where did you see it?" %><br />
+      <%= f.text_field :location %>
+    </div>
+
+    <div>
+      <%= f.label :description, "Tell us what you saw:" %><br />
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :photo, "Share a photo:" %><br />
+      <%= f.file_field :photo %>
+    </div>
+
+    <div>
+      <%= f.label :cryptid_id, "Choose a Cryptid" %><br />
+      <%= select_tag("sighting[cryptid_id]", options_from_collection_for_select(@cryptids, "id", "name")) %>
+    </div>
+
+    <div class='radio-buttons'>
+      <label class='new-form radio-label'>How sure are you that this was a genuine sighting?</label>
+      <%= f.collection_radio_buttons(:rating, @rating_options, :first, :last) %>
+    </div>
+
+    <div class='button-div'>
+      <%= f.submit :class => 'submit-button' %>
+    </div>
+  <% end %>
+</div>
