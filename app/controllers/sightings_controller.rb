@@ -62,6 +62,11 @@ class SightingsController < ApplicationController
       [4,4],
       [5,5]
     ]
+
+    if current_user.nil? || (current_user != @sighting.user)
+      flash[:notice] = "You can only edit your own sightings!"
+      redirect_to cryptid_path(@sighting.cryptid)
+    end
   end
 
   def update
@@ -71,7 +76,7 @@ class SightingsController < ApplicationController
       flash[:notice] = "Your sighting has been updated!"
       redirect_to cryptid_path(cryptid)
     else
-      render :edit
+      render 'edit'
     end
   end
 
