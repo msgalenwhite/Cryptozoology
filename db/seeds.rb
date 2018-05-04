@@ -9,7 +9,7 @@ admin = User.create!(
   email: "admin@fakeemail.com",
   password: "password",
   password_confirmation: "password",
-  name: "Admin",
+  name: "Larry Looker",
   admin: true,
   remote_profile_photo_url:"https://i.pinimg.com/originals/0d/a7/74/0da77405735d4c72e9ca457b18974053.jpg",
   bio: "I founded this site as a cover for finding my ex-girlfriend.  She was very hairy."
@@ -105,6 +105,59 @@ megalodon = Cryptid.create!(
   region: oceania,
   category: sea_monsters
 )
+champ = Cryptid.create!(
+  name: "Champ",
+  remote_photo_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Artistic_representation_of_Sandra_Mansi%27s_1977_photograph_of_%22Champ%22_lake_monster.jpg/1280px-Artistic_representation_of_Sandra_Mansi%27s_1977_photograph_of_%22Champ%22_lake_monster.jpg",
+  description: "In American folklore, Champ or Champy is the name given to a lake monster supposedly living in Lake Champlain, a 125-mile (201 km)-long body of fresh water shared by New York and Vermont, with a portion extending into Quebec, Canada.[2] The legend of the monster is considered a draw for tourism in the Burlington, Vermont and Plattsburgh, New York areas.",
+  user: member,
+  region: us,
+  category: sea_monsters
+)
+altamaha_ha = Cryptid.create!(
+  name: "Altamaha-ha",
+  remote_photo_url:"http://2.bp.blogspot.com/-FPAcswF-ICs/ThOYp-nZc_I/AAAAAAAADFc/MxTw8-tZumQ/s1600/Altamahaha.jpg",
+  description: "In Georgia folklore, the Altamaha-ha (or Altie) is a legendary creature, alleged to inhabit the myriad small streams and abandoned rice fields near the mouth of the Altamaha River (after which it is named) in southeastern Georgia, United States. Sightings are particularly reported around Darien and elsewhere in McIntosh County.",
+  user: member,
+  region: us,
+  category: sea_monsters
+)
+
+appalacian_black_panther = Cryptid.create!(
+  name: "Appalacian Black Panther",
+  remote_photo_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Black_puma.jpg/180px-Black_puma.jpg",
+  description: "A large black felid, possibly a melanistic cougar.  Sightings throughout appalacia from New York and New England and as far south as Alabama.",
+  user: member,
+  region: us,
+  category: carnivorous_mammal
+)
+
+beaman_monster = Cryptid.create!(
+  name: "Beaman Monster",
+  remote_photo_url:"https://vignette.wikia.nocookie.net/cryptidz/images/4/47/Gorillaa.jpg/revision/latest?cb=20130726095145",
+  description: "In Missouri folklore, the Beaman Monster is an entity named after the town of Beaman. Legends about the monster vary; some describe the creature as the spawn of a 12-pound gorilla said to have escaped from a circus train, whereas others describe the monster as 'shaped like a wolf or coyote'. Tales regarding the Beaman Monster have been told for generations in the Sedalia area.",
+  user: member,
+  region: us,
+  category: hairy_hominids
+)
+
+mongolian_death_worm = Cryptid.create!(
+  name: "Mongolian Death Worm",
+  remote_photo_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Allghoikhorkhoi.jpg/300px-Allghoikhorkhoi.jpg",
+  description: "The Mongolian death worm (Mongolian: олгой-хорхой, olgoi-khorkhoi, \"large intestine worm\") is a creature alleged to exist in the Gobi Desert. The creature first came to Western attention as a result of Roy Chapman Andrews's 1926 book On the Trail of Ancient Man. The American paleontologist was not convinced by the tales of the monster that he heard at a gathering of Mongolian officials: \"None of those present ever had seen the creature, but they all firmly believed in its existence and described it minutely.\"",
+  user: member,
+  region: asia,
+  category: mythological
+)
+
+hodag = Cryptid.create!(
+  name: "Hodag",
+  remote_photo_url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/40/The_hodag.jpg/300px-The_hodag.jpg",
+  description: "In Wisconsin folklore, the hodag is a fearsome critter. Its history is focused mainly around the city of Rhinelander in northern Wisconsin, where it was said to have been discovered. It is also mentioned in several Paul Bunyan stories. In 1893, newspapers reported the discovery of a hodag in Rhinelander, Wisconsin. It had \"the head of a frog, the grinning face of a giant elephant, thick short legs set off by huge claws, the back of a dinosaur, and a long tail with spears at the end\". The reports were instigated by well-known Wisconsin land surveyor, timber cruiser and prankster Eugene Shepard, who rounded up a group of local people to capture the animal. The group reported that they needed to use dynamite to kill the beast. A photograph of the remains of the charred beast was released to the media. It was the fiercest, strangest, most frightening monster ever to set razor sharp claws on the earth. It became extinct after its main food source, all white bulldogs, became scarce in the area."
+  user: member,
+  region: us,
+  category: reptile
+)
+
 sighting1 = Sighting.create!(
   user: member,
   cryptid: bigfoot ,
@@ -114,15 +167,14 @@ sighting1 = Sighting.create!(
   remote_photo_url: "https://i.ytimg.com/vi/RT_kpoEs1Lk/hqdefault.jpg"
 )
 
-sighting2 = Sighting.create!(
+sighting12 = Sighting.create!(
   user: member,
-  cryptid: bigfoot ,
-  location: "The YMCA - Portland, OR",
-  description: "This dude was 100% a Sasquatch.  He looks like he shaved, but he could bench 800 pounds.",
-  rating: 4,
-  remote_photo_url: "https://media.allure.com/photos/5a4bd031dd0c5b5b96b218c8/1:1/w_767/Screen%2520Shot%25202018-01-02%2520at%25201.07.11%2520PM.png"
+  cryptid: werehyena ,
+  location: "El Geneina, Sudan",
+  description: "I think I was attacked by a Werehyena, but he left me alone once he realized that I didn't have a girlfriend.  I even get friend-zoned by Werehyenas.",
+  rating: 3,
+  remote_photo_url: "http://i.imgur.com/QpQ9pfS.jpg"
 )
-
 sighting3 = Sighting.create!(
   user: member,
   cryptid: nessie ,
@@ -130,6 +182,23 @@ sighting3 = Sighting.create!(
   description: "I was in my rowboat and Nessie ducked her head in to say hello.  I gave her a hug but she dived underwater before I could take a selfie. ",
   rating: 5,
   remote_photo_url: "https://garrulousgwendoline.files.wordpress.com/2013/07/image90.jpg"
+)
+
+sighting6 = Sighting.create!(
+  user: member,
+  cryptid: chupacabra ,
+  location: "El Paso, TX",
+  description: "I thought it was a coyote, but it looked too fast for that.  I keep my goats inside.",
+  rating: 2,
+  remote_photo_url: "https://iplanttheseeds.files.wordpress.com/2011/07/chupacabra1-1.jpg"
+)
+sighting13 = Sighting.create!(
+  user: member,
+  cryptid: megalodon ,
+  location: "Phillipine Sea",
+  description: "A very large shark swam by my catamaran.  Like, so big.  Maybe it was a Megaladon?  I'm not good at identifying fish,",
+  rating: 3,
+  remote_photo_url: "https://i2-prod.mirror.co.uk/incoming/article9399873.ece/ALTERNATES/s1200/Drone-films-Shark.jpg"
 )
 
 sighting4 = Sighting.create!(
@@ -150,15 +219,6 @@ sighting5 = Sighting.create!(
   remote_photo_url: "https://www.versionpb.com/wp-content/uploads/2016/10/TheMissingGoat.jpg"
 )
 
-sighting6 = Sighting.create!(
-  user: member,
-  cryptid: chupacabra ,
-  location: "El Paso, TX",
-  description: "I thought it was a coyote, but it looked too fast for that.  I keep my goats inside.",
-  rating: 2,
-  remote_photo_url: "https://iplanttheseeds.files.wordpress.com/2011/07/chupacabra1-1.jpg"
-)
-
 sighting7 = Sighting.create!(
   user: member,
   cryptid: jinn ,
@@ -166,6 +226,15 @@ sighting7 = Sighting.create!(
   description: "I met a man who told me he was a Jinn, but I think he was just a rich oil baron throwing his money around when he said he could make my wishes come true.",
   rating: 2,
   remote_photo_url: "http://gulfbusiness.com/wp-content/uploads/Screen-Shot-2016-05-11-at-9.28.40-AM.png"
+)
+
+sighting2 = Sighting.create!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "The YMCA - Portland, OR",
+  description: "This dude was 100% a Sasquatch.  He looks like he shaved, but he could bench 800 pounds.",
+  rating: 4,
+  remote_photo_url: "https://media.allure.com/photos/5a4bd031dd0c5b5b96b218c8/1:1/w_767/Screen%2520Shot%25202018-01-02%2520at%25201.07.11%2520PM.png"
 )
 
 sighting8 = Sighting.create!(
@@ -204,24 +273,6 @@ sighting11 = Sighting.create!(
   remote_photo_url: "https://i.pinimg.com/originals/e7/23/3b/e7233ba8dfc89cc6fbfae7f6bb6d5f7e.jpg"
 )
 
-sighting12 = Sighting.create!(
-  user: member,
-  cryptid: werehyena ,
-  location: "El Geneina, Sudan",
-  description: "I think I was attacked by a Werehyena, but he left me alone once he realized that I didn't have a girlfriend.  I even get friend-zoned by Werehyenas.",
-  rating: 3,
-  remote_photo_url: "http://i.imgur.com/QpQ9pfS.jpg"
-)
-
-sighting13 = Sighting.create!(
-  user: member,
-  cryptid: megalodon ,
-  location: "Phillipine Sea",
-  description: "A very large shark swam by my catamaran.  Like, so big.  Maybe it was a Megaladon?  I'm not good at identifying fish,",
-  rating: 3,
-  remote_photo_url: "https://i2-prod.mirror.co.uk/incoming/article9399873.ece/ALTERNATES/s1200/Drone-films-Shark.jpg"
-)
-
 sighting14 = Sighting.create!(
   user: member,
   cryptid: megalodon ,
@@ -230,6 +281,44 @@ sighting14 = Sighting.create!(
   rating: 1,
   remote_photo_url: "https://i.ytimg.com/vi/2dhjhWc4ums/maxresdefault.jpg"
 )
+
+sighting15 = Sighting.create!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "Yosemite National Park",
+  description: "We were enjoying our hike when Bigfoot came and stole our picnic basket.",
+  rating: 4,
+  remote_photo_url:"http://3.bp.blogspot.com/-QL9TnQSbrqM/Uphems35O9I/AAAAAAAC-Jw/rrVyNETITHA/s1600/bigfootpicnic.jpg"
+)
+
+sighting16 = Sighting.create!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "My Niece's Bat Mitzfah",
+  description: "He's a family friend. We didn't take a picture together, but my nephew drew him for the site.",
+  rating: 5,
+  remote_photo_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIQ5dpZ9152ZUzEUmgbMp-1oFty6hr8rdv9SwWYFgUyHDW45Nr"
+)
+
+sighting17 = Sighting.create!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "Acadia National Park",
+  description: "We were on a hike and he came up to us to say hello.  He walked with us for a while and we shared a granola bar. He asked not to take any pictures, so this is just one from our hike.  Good guy, that Bigfoot.",
+  rating: 4,
+  remote_photo_url: "https://www.outdoorproject.com/sites/default/files/styles/cboxshow/public/blog-copies/img_2552.jpg?itok=0eqhP5GL"
+)
+
+sighting17 = Sighting.create!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "Grand Teton National Park",
+  description: "OMG! We found a baby Bigfoot! We brought her home and dressed her up!",
+  rating: 5,
+  remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5hVy33CnaTbB-hPP6wr3VPq6kZ2E9kxhMXEARAFDQisNeVAXkxA"
+)
+
+
 
 vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
 vote2 = UserVote.create!(user: member2, sighting: sighting2, vote: 1)
