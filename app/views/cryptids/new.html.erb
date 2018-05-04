@@ -2,17 +2,17 @@
 <div class='new-form'>
   <%= form_for(@cryptid) do |f| %>
     <div>
-      <%= f.label :name %><br />
+      <%= f.label :name, "Give your new cryptid a name (feel free to be creative)" %><br />
       <%= f.text_field :name %>
     </div>
 
     <div class="field">
-      <%= f.label :photo %><br />
+      <%= f.label :photo, "Have you gotten a photo?" %><br />
       <%= f.file_field :photo %>
     </div>
 
     <div>
-      <%= f.label :description %><br />
+      <%= f.label :description, "What is the history of your cryptid?" %><br />
       <%= f.text_area :description %>
     </div>
 
