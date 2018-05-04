@@ -8,6 +8,7 @@ const MostRecentSightings = props => {
       <h3 className='home-page-tile-title'>
         Recent Sightings:
       </h3>
+      <hr/>
       <SightingsContainer />
     </div>
   )

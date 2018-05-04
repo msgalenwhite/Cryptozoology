@@ -12,7 +12,7 @@
     </div>
     <div class="user-bio"><p><%= user.bio %></p></div>
     <br>
-    <%= link_to "Delete #{user.name}", user_path(user), :method => :delete, data: { confirm: 'Are you sure you want to delete this User?' } %>
+    <%= link_to "Delete #{user.name}", user_path(user), :method => :delete, data: { confirm: 'Are you sure you want to delete this User? This will also delete all of their Cryptids and Sightings.' } %>
   </li>
 <% end %>
 </ul>
