@@ -1,6 +1,17 @@
+@import 'colors';
+
 .search-results {
   margin: .5em 3em;
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.search-link-header {
+  color: $dark-green;
+  font-size: 1.2em;
+  font-style: italic;
+}
+.search-link-header:hover {
+  color: $yellow-ish;
 }

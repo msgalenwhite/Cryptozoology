@@ -18,6 +18,11 @@
     <div id='app' class='react-div'></div>
   </div>
 
+  <h3 class='cryptid-show-title'>Seen something new?</h3>
+  <div class='flex-box'>
+    <a class='new-submission-button' href='/sightings/new'>Submit a Sighting</a>
+  </div>
+
   <% if current_user %>
     <% if current_user == @cryptid.user || current_user.admin? %>
       <br>
