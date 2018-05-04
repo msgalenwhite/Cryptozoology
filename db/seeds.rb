@@ -152,54 +152,14 @@ mongolian_death_worm = Cryptid.create!(
 hodag = Cryptid.create!(
   name: "Hodag",
   remote_photo_url:"https://upload.wikimedia.org/wikipedia/en/thumb/4/40/The_hodag.jpg/300px-The_hodag.jpg",
-  description: "In Wisconsin folklore, the hodag is a fearsome critter. Its history is focused mainly around the city of Rhinelander in northern Wisconsin, where it was said to have been discovered. It is also mentioned in several Paul Bunyan stories. In 1893, newspapers reported the discovery of a hodag in Rhinelander, Wisconsin. It had \"the head of a frog, the grinning face of a giant elephant, thick short legs set off by huge claws, the back of a dinosaur, and a long tail with spears at the end\". The reports were instigated by well-known Wisconsin land surveyor, timber cruiser and prankster Eugene Shepard, who rounded up a group of local people to capture the animal. The group reported that they needed to use dynamite to kill the beast. A photograph of the remains of the charred beast was released to the media. It was the fiercest, strangest, most frightening monster ever to set razor sharp claws on the earth. It became extinct after its main food source, all white bulldogs, became scarce in the area."
+  description: "In Wisconsin folklore, the hodag is a fearsome critter. Its history is focused mainly around the city of Rhinelander in northern Wisconsin, where it was said to have been discovered. It is also mentioned in several Paul Bunyan stories. In 1893, newspapers reported the discovery of a hodag in Rhinelander, Wisconsin. It had \"the head of a frog, the grinning face of a giant elephant, thick short legs set off by huge claws, the back of a dinosaur, and a long tail with spears at the end\". The reports were instigated by well-known Wisconsin land surveyor, timber cruiser and prankster Eugene Shepard, who rounded up a group of local people to capture the animal. The group reported that they needed to use dynamite to kill the beast. A photograph of the remains of the charred beast was released to the media. It was the fiercest, strangest, most frightening monster ever to set razor sharp claws on the earth. It became extinct after its main food source, all white bulldogs, became scarce in the area.",
   user: member,
   region: us,
   category: reptile
 )
 
-sighting1 = Sighting.create!(
-  user: member,
-  cryptid: bigfoot ,
-  location: "The Woods of the Pacific Northwest",
-  description: "I saw him walk by, but maybe he was just a guy in a suit.  He looked like he may be wearing a watch.",
-  rating: 2,
-  remote_photo_url: "https://i.ytimg.com/vi/RT_kpoEs1Lk/hqdefault.jpg"
-)
 
-sighting12 = Sighting.create!(
-  user: member,
-  cryptid: werehyena ,
-  location: "El Geneina, Sudan",
-  description: "I think I was attacked by a Werehyena, but he left me alone once he realized that I didn't have a girlfriend.  I even get friend-zoned by Werehyenas.",
-  rating: 3,
-  remote_photo_url: "http://i.imgur.com/QpQ9pfS.jpg"
-)
-sighting3 = Sighting.create!(
-  user: member,
-  cryptid: nessie ,
-  location: "Loch Ness, Scotland",
-  description: "I was in my rowboat and Nessie ducked her head in to say hello.  I gave her a hug but she dived underwater before I could take a selfie. ",
-  rating: 5,
-  remote_photo_url: "https://garrulousgwendoline.files.wordpress.com/2013/07/image90.jpg"
-)
 
-sighting6 = Sighting.create!(
-  user: member,
-  cryptid: chupacabra ,
-  location: "El Paso, TX",
-  description: "I thought it was a coyote, but it looked too fast for that.  I keep my goats inside.",
-  rating: 2,
-  remote_photo_url: "https://iplanttheseeds.files.wordpress.com/2011/07/chupacabra1-1.jpg"
-)
-sighting13 = Sighting.create!(
-  user: member,
-  cryptid: megalodon ,
-  location: "Phillipine Sea",
-  description: "A very large shark swam by my catamaran.  Like, so big.  Maybe it was a Megaladon?  I'm not good at identifying fish,",
-  rating: 3,
-  remote_photo_url: "https://i2-prod.mirror.co.uk/incoming/article9399873.ece/ALTERNATES/s1200/Drone-films-Shark.jpg"
-)
 
 sighting4 = Sighting.create!(
   user: member,
@@ -309,7 +269,7 @@ sighting17 = Sighting.create!(
   remote_photo_url: "https://www.outdoorproject.com/sites/default/files/styles/cboxshow/public/blog-copies/img_2552.jpg?itok=0eqhP5GL"
 )
 
-sighting17 = Sighting.create!(
+sighting18 = Sighting.create!(
   user: member,
   cryptid: bigfoot ,
   location: "Grand Teton National Park",
@@ -318,6 +278,46 @@ sighting17 = Sighting.create!(
   remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5hVy33CnaTbB-hPP6wr3VPq6kZ2E9kxhMXEARAFDQisNeVAXkxA"
 )
 
+sighting13 = Sighting.create!(
+  user: member,
+  cryptid: megalodon ,
+  location: "Phillipine Sea",
+  description: "A very large shark swam by my catamaran.  Like, so big.  Maybe it was a Megaladon?  I'm not good at identifying fish,",
+  rating: 3,
+  remote_photo_url: "https://i2-prod.mirror.co.uk/incoming/article9399873.ece/ALTERNATES/s1200/Drone-films-Shark.jpg"
+)
+sighting6 = Sighting.create!(
+  user: member,
+  cryptid: chupacabra ,
+  location: "El Paso, TX",
+  description: "I thought it was a coyote, but it looked too fast for that.  I keep my goats inside.",
+  rating: 2,
+  remote_photo_url: "https://iplanttheseeds.files.wordpress.com/2011/07/chupacabra1-1.jpg"
+)
+sighting12 = Sighting.create!(
+  user: member,
+  cryptid: werehyena ,
+  location: "El Geneina, Sudan",
+  description: "I think I was attacked by a Werehyena, but he left me alone once he realized that I didn't have a girlfriend.  I even get friend-zoned by Werehyenas.",
+  rating: 3,
+  remote_photo_url: "http://i.imgur.com/QpQ9pfS.jpg"
+)
+sighting3 = Sighting.create!(
+  user: member,
+  cryptid: nessie ,
+  location: "Loch Ness, Scotland",
+  description: "I was in my rowboat and Nessie ducked her head in to say hello.  I gave her a hug but she dived underwater before I could take a selfie. ",
+  rating: 5,
+  remote_photo_url: "https://garrulousgwendoline.files.wordpress.com/2013/07/image90.jpg"
+)
+sighting1 = Sighting.create!(
+  user: member,
+  cryptid: bigfoot ,
+  location: "The Woods of the Pacific Northwest",
+  description: "I saw him walk by, but maybe he was just a guy in a suit.  He looked like he may be wearing a watch.",
+  rating: 2,
+  remote_photo_url: "https://i.ytimg.com/vi/RT_kpoEs1Lk/hqdefault.jpg"
+)
 
 
 vote1 = UserVote.create!(user: member2, sighting: sighting1, vote: 1)
