@@ -52,6 +52,34 @@ class SightingsController < ApplicationController
     end
   end
 
+  def edit
+    @sighting = Sighting.find(params[:id])
+    @cryptids = Cryptid.all
+    @rating_options = [
+      [1,1],
+      [2,2],
+      [3,3],
+      [4,4],
+      [5,5]
+    ]
+
+    if current_user.nil? || (current_user != @sighting.user)
+      flash[:notice] = "You can only edit your own sightings!"
+      redirect_to cryptid_path(@sighting.cryptid)
+    end
+  end
+
+  def update
+    sighting = Sighting.find(params[:id])
+    if sighting.update(sighting_params)
+      cryptid = sighting.cryptid
+      flash[:notice] = "Your sighting has been updated!"
+      redirect_to cryptid_path(cryptid)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def sighting_params

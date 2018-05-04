@@ -113,6 +113,7 @@ class SightingsContainer extends Component {
       return(
         <Sighting
           key={sighting["id"]}
+          id={sighting["id"]}
           user_name={sighting["user_name"]}
           pic_url={sighting["cryptid_pic"]}
           cryptid_name={sighting["cryptid_name"]}
