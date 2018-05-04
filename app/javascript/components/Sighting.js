@@ -21,7 +21,7 @@ const Sighting = props => {
       />
     )
   })
-  
+
   return(
     <div className='sighting-tile row'>
       <div className='sighting-cryptid-name'>
@@ -52,7 +52,11 @@ const Sighting = props => {
       <div className='row'>
         <p className='columns small-12 sighting-description'>{props.description}</p>
       </div>
-      <a href={`/sightings/${props.id}/edit`}>Edit</a>
+      <div className="button-div">
+        <a href={`/sightings/destroy/${props.id}`}>Delete</a>
+        <a href={`/sightings/${props.id}/edit`}>Edit</a>
+      </div>
+      <hr/>
     </div>
   )
 }

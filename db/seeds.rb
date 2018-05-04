@@ -15,6 +15,16 @@ admin = User.create!(
   bio: "I founded this site as a cover for finding my ex-girlfriend.  She was very hairy."
 )
 
+admin2 = User.create!(
+  email: "admin2@fakeemail.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Barry Looker",
+  admin: true,
+  remote_profile_photo_url:"https://i.pinimg.com/originals/0d/a7/74/0da77405735d4c72e9ca457b18974053.jpg",
+  bio: "I'm Larry's twin brother."
+)
+
 member = User.create!(
   email: "member@fakeemail.com",
   password: "password",

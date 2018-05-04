@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-feature 'admin can edit cryptids' do
+feature 'admin can delete users' do
   let!(:admin) { FactoryBot.create(:user, admin: true)}
   let!(:user1) { FactoryBot.create(:user, name: "Delete Me") }
   let!(:user2) { FactoryBot.create(:user) }
@@ -24,7 +24,7 @@ feature 'admin can edit cryptids' do
 
     click_link "Delete #{user1.name}"
 
-    expect(page).to have_content("Bye! Your account has been successfully cancelled. We hope to see you again soon.")
+    expect(page).to have_content("You have deleted the user.")
 
   end
 

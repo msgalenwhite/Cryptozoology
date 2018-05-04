@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   end
 
   resources :cryptids
-  resources :users, only: [:index]
+  resources :users
 end
