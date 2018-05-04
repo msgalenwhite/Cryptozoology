@@ -94,7 +94,8 @@ class CryptidSightings extends Component {
     let downVote;
 
     const cryptidId = this.state.cryptidId
-    const tiles = filteredSightings.map((sighting) => {
+    const tiles = this.state.sightings.map((sighting) => {
+      if (sighting["cryptid_id"] === cryptidId) {
         if (this.state.currentUserId !== null) {
           upVote = () => {
             this.sendOutVotes(sighting["id"], 1)
@@ -119,6 +120,7 @@ class CryptidSightings extends Component {
             downvote={downVote}
           />
         )
+      }
     })
     return tiles
   }
