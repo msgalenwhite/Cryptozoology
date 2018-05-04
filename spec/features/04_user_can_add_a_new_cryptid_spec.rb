@@ -4,6 +4,9 @@ feature 'user can add a new cryptid' do
   let!(:test_user) { FactoryBot.create(:user) }
   let!(:na) { Region.create(name: "North America")}
   let!(:hairy) {Category.create(name: "Hairy Hominids")}
+  let!(:name_text) { "Give your new cryptid a name (feel free to be creative)" }
+  let!(:description_text) { "What is the history of your cryptid?" }
+  let!(:photo_input) { "#{Rails.root}/spec/support/images/purple_flowers.jpg" }
 
   scenario "user adds new cryptid successfully" do
     visit new_user_session_path
@@ -16,9 +19,9 @@ feature 'user can add a new cryptid' do
     visit new_cryptid_path
     expect(page).to have_content "New Cryptid Form"
 
-    fill_in 'Name', with: "Bigfoot"
-    attach_file "Photo", "#{Rails.root}/spec/support/images/purple_flowers.jpg"
-    fill_in 'Description', with: "Like Robin Williams, but hairier."
+    fill_in name_text, with: "Bigfoot"
+    attach_file "Have you gotten a photo?", photo_input
+    fill_in description_text, with: "Like Robin Williams, but hairier."
     find(:select, "Region").first(:option, 'North America').select_option
     find(:select, "Category").first(:option, 'Hairy Hominids').select_option
 
