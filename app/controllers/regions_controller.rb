@@ -5,6 +5,6 @@ class RegionsController < ApplicationController
 
   def show
     @region = Region.find(params[:id])
-    @cryptids = @region.cryptids
+    @cryptids = @region.cryptids.sort_by{|c| c[:name]}
   end
 end

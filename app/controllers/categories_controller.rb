@@ -5,6 +5,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @cryptids = @category.cryptids
+    @cryptids = @category.cryptids.sort_by{|c| c[:name]}
   end
 end

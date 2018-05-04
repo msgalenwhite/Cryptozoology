@@ -8,4 +8,5 @@ class Cryptid < ApplicationRecord
   belongs_to :region
   belongs_to :category
   has_many :sightings
+
 end
