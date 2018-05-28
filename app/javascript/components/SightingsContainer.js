@@ -6,38 +6,23 @@ class SightingsContainer extends Component {
     super(props);
     this.state = {
       sightings: [],
-      currentPage: 0,
-      currentUserId: parseInt(this.getCookie("userid"))
+      currentPage: 0
     }
     this.changeCurrentPage = this.changeCurrentPage.bind(this)
-    this.currentPageSightings = this.currentPageSightings.bind(this)
     this.generateTiles = this.generateTiles.bind(this)
-    this.getCookie = this.getCookie.bind(this)
     this.triggerFetch = this.triggerFetch.bind(this)
   }
 
-  getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
   componentDidMount() {
-    this.triggerFetch()
+    this.triggerFetch(0)
   }
 
-  triggerFetch() {
-    fetch('/api/v1/sightings')
+  triggerFetch(page) {
+    fetch(`/api/v1/sightings.json?page=${page}`, {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+    })
       .then ( response => {
         if ( response.ok ) {
           return response;
@@ -49,10 +34,8 @@ class SightingsContainer extends Component {
       })
       .then ( response => response.json() )
       .then ( response => {
-        let newResponse = response["sightings"]
-
         this.setState({
-          sightings: newResponse
+          sightings: response["sightings"]
         })
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
@@ -60,30 +43,27 @@ class SightingsContainer extends Component {
 
   changeCurrentPage(change) {
     const newPage = this.state.currentPage + change
-    this.setState({
-      currentPage: newPage
-    })
-  }
-
-  currentPageSightings() {
-    let startIndex = (this.state.currentPage * 6)
-    let endIndex = startIndex + 5
-    return this.state.sightings.slice(startIndex, endIndex)
-  }
-
-  sendOutVotes(sightingId, voteValue) {
-    const formData = {
-      sightingId: sightingId,
-      userVote: voteValue,
-      currentUserId: this.state.currentUserId
+    if (newPage >= 0) {
+      this.setState({
+        currentPage: newPage
+      })
+      this.triggerFetch(newPage)
     }
+  }
 
-    fetch("/api/v1/user_votes", {
-      credentials: 'same-origin',
-      method: 'POST',
-      body: JSON.stringify(formData),
-      headers: { 'Content-Type': 'application/json' }
-    })
+  sendOutVotes(sightingId, voteValue, signed_in) {
+    if (signed_in) {
+      const formData = {
+        sightingId: sightingId,
+        userVote: voteValue
+      }
+
+      fetch("/api/v1/user_votes.json", {
+        credentials: 'same-origin',
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' }
+      })
       .then ( response => {
         if ( response.ok ) {
           return response;
@@ -98,17 +78,18 @@ class SightingsContainer extends Component {
         this.triggerFetch()
       })
       .catch ( error => console.error(`Error in fetch: ${error.message}`) );
+    }
   }
 
   generateTiles() {
-    const sightingsArray = this.currentPageSightings()
+    const sightingsArray = this.state.sightings
 
     const tiles = sightingsArray.map((sighting) => {
       const upVote = () => {
-        this.sendOutVotes(sighting["id"], 1)
+        this.sendOutVotes(sighting["id"], 1, sighting.belongs_to_user)
       }
       const downVote = () => {
-        this.sendOutVotes(sighting["id"], -1)
+        this.sendOutVotes(sighting["id"], -1, sighting.belongs_to_user)
       }
       return(
         <Sighting
@@ -132,6 +113,7 @@ class SightingsContainer extends Component {
   }
 
   render(){
+    console.log(this.state)
     let tiles;
     let buttons;
     if (this.state.sightings.length > 0) {
