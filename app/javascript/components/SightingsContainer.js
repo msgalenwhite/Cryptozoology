@@ -113,7 +113,6 @@ class SightingsContainer extends Component {
   }
 
   render(){
-    console.log(this.state)
     let tiles;
     let buttons;
     if (this.state.sightings.length > 0) {
