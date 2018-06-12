@@ -125,6 +125,7 @@ class CryptidSightings extends Component {
             user_vote={sighting["user_vote"]}
             upvote={upVote}
             downvote={downVote}
+            canEdit={sighting["can_edit"]}
           />
         )
       }
