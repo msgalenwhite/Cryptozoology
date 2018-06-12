@@ -1,6 +1,6 @@
 class SightingSerializer < ActiveModel::Serializer
 
-  attributes :id, :location, :description, :cryptid_pic, :rating, :formatted_date, :user_name, :cryptid_name, :cryptid_id, :vote_total, :signed_in_state
+  attributes :id, :location, :description, :cryptid_pic, :rating, :formatted_date, :user_name, :cryptid_name, :cryptid_id, :vote_total, :signed_in_state, :can_edit
 
   def cryptid_id
     object.cryptid.id
@@ -30,6 +30,15 @@ class SightingSerializer < ActiveModel::Serializer
   def signed_in_state
     if @instance_options[:user]
       return true
+    end
+    return false
+  end
+
+  def can_edit
+    if @instance_options[:user]
+      if @instance_options[:user].admin || object.user_id == @instance_options[:user].id
+        return true
+      end
     end
     return false
   end

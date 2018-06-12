@@ -39,7 +39,13 @@ class CryptidSightings extends Component {
   }
 
   triggerFetch() {
-    fetch('/api/v1/sightings')
+    fetch('/api/v1/sightings.json', {
+    credentials: 'same-origin',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'GET'})
       .then ( response => {
         if ( response.ok ) {
           return response;
