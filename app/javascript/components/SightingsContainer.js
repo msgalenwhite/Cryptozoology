@@ -52,18 +52,18 @@ class SightingsContainer extends Component {
     }
   }
 
-  sendOutVotes(sightingId, voteValue, signed_in) {
-    if (signed_in) {
+  sendOutVotes(sightingId, voteValue, signed_in_state) {
+    if (signed_in_state) {
       const formData = {
         sightingId: sightingId,
         userVote: voteValue
       }
 
-      fetch("/api/v1/user_votes.json", {
+      fetch("/api/v1/user_votes", {
         credentials: 'same-origin',
         method: 'POST',
         body: JSON.stringify(formData),
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       })
       .then ( response => {
         if ( response.ok ) {
@@ -87,10 +87,10 @@ class SightingsContainer extends Component {
 
     const tiles = sightingsArray.map((sighting) => {
       const upVote = () => {
-        this.sendOutVotes(sighting["id"], 1, sighting.belongs_to_user)
+        this.sendOutVotes(sighting["id"], 1, sighting.signed_in_state)
       }
       const downVote = () => {
-        this.sendOutVotes(sighting["id"], -1, sighting.belongs_to_user)
+        this.sendOutVotes(sighting["id"], -1, sighting.signed_in_state)
       }
       return(
         <Sighting

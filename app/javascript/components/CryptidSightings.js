@@ -67,7 +67,6 @@ class CryptidSightings extends Component {
   }
 
   sendOutVotes(sightingId, voteValue) {
-    // debugger;
     const formData = {
       sightingId: sightingId,
       userVote: voteValue,
