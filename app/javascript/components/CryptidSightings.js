@@ -67,6 +67,7 @@ class CryptidSightings extends Component {
   }
 
   sendOutVotes(sightingId, voteValue) {
+    // debugger;
     const formData = {
       sightingId: sightingId,
       userVote: voteValue,
@@ -77,7 +78,7 @@ class CryptidSightings extends Component {
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(formData),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
     })
       .then ( response => {
         if ( response.ok ) {

@@ -11,6 +11,7 @@ class SightingsContainer extends Component {
     this.changeCurrentPage = this.changeCurrentPage.bind(this)
     this.generateTiles = this.generateTiles.bind(this)
     this.triggerFetch = this.triggerFetch.bind(this)
+    this.sendOutVotes = this.sendOutVotes.bind(this)
   }
 
   componentDidMount() {
@@ -106,6 +107,7 @@ class SightingsContainer extends Component {
           vote_total={sighting["vote_total"]}
           upvote={upVote}
           downvote={downVote}
+          canEdit={sighting["can_edit"]}
         />
       )
     })
