@@ -39,7 +39,13 @@ class CryptidSightings extends Component {
   }
 
   triggerFetch() {
-    fetch('/api/v1/sightings')
+    fetch('/api/v1/sightings.json', {
+    credentials: 'same-origin',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'GET'})
       .then ( response => {
         if ( response.ok ) {
           return response;
@@ -71,7 +77,7 @@ class CryptidSightings extends Component {
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(formData),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
     })
       .then ( response => {
         if ( response.ok ) {
@@ -119,6 +125,7 @@ class CryptidSightings extends Component {
             user_vote={sighting["user_vote"]}
             upvote={upVote}
             downvote={downVote}
+            canEdit={sighting["can_edit"]}
           />
         )
       }

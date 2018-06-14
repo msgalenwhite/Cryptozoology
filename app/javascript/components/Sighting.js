@@ -3,6 +3,17 @@ import RatingBar from './RatingBar'
 import iconData from '../constants/iconData'
 
 const Sighting = props => {
+  const editDeleteButtons = () => {
+    if (props.canEdit) {
+      return(
+        <div className="button-div">
+          <a href={`/sightings/destroy/${props.id}`}>Delete</a>
+          <a href={`/sightings/${props.id}/edit`}>Edit</a>
+        </div>
+      )
+    }
+  }
+
   let icons = Object.entries(iconData['confidence']).map((miniArray) => {
     let rating = miniArray[0]
     let iconSrc = miniArray[1]
@@ -52,10 +63,7 @@ const Sighting = props => {
       <div className='row'>
         <p className='columns small-12 sighting-description'>{props.description}</p>
       </div>
-      <div className="button-div">
-        <a href={`/sightings/destroy/${props.id}`}>Delete</a>
-        <a href={`/sightings/${props.id}/edit`}>Edit</a>
-      </div>
+      {editDeleteButtons()}
       <hr/>
     </div>
   )
